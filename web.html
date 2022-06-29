@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>LSA &#8212; My sample book</title>
+    <title>Latent Semantic Analysis (LSA) &#8212; My sample book</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,9 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="UAS Web Mining-Topic Modelling(LSA)" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -108,14 +110,14 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    UAS Web Mining-Topic Modelling(LSA)
                 </a>
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   LSA
+   Latent Semantic Analysis (LSA)
   </a>
  </li>
 </ul>
@@ -302,23 +304,238 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Latent Semantic Analysis (LSA)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crawling-data">
+   Crawling data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instalasi-scrapy">
+     Instalasi Scrapy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#membuat-file-scrapy">
+     Membuat File Scrapy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menjalankan-spyder-baru">
+     Menjalankan Spyder baru
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menulis-program-scapper">
+     Menulis Program Scapper
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menjalankan-file-spider">
+     Menjalankan File Spider
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menyimpan-data-kedalam-csv">
+     Menyimpan data kedalam csv
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-data">
+   Preprocessing data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installasi-library">
+     Installasi library
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-library-yang-digunakan">
+     Import library yang digunakan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-set">
+     Data set
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drop-data-yang-tidak-digunakan">
+     Drop data yang tidak digunakan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-angka">
+     Remove angka
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cleansing-data">
+     Cleansing data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menghapus-data-yang-tidak-dibutuhkan">
+     Menghapus data yang tidak dibutuhkan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tf-idf">
+     TF-IDF
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lsa">
+   LSA
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>LSA</h1>
+                <h1>Latent Semantic Analysis (LSA)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Latent Semantic Analysis (LSA)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#crawling-data">
+   Crawling data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#instalasi-scrapy">
+     Instalasi Scrapy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#membuat-file-scrapy">
+     Membuat File Scrapy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menjalankan-spyder-baru">
+     Menjalankan Spyder baru
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menulis-program-scapper">
+     Menulis Program Scapper
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menjalankan-file-spider">
+     Menjalankan File Spider
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menyimpan-data-kedalam-csv">
+     Menyimpan data kedalam csv
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#preprocessing-data">
+   Preprocessing data
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installasi-library">
+     Installasi library
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#import-library-yang-digunakan">
+     Import library yang digunakan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-set">
+     Data set
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drop-data-yang-tidak-digunakan">
+     Drop data yang tidak digunakan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#remove-angka">
+     Remove angka
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cleansing-data">
+     Cleansing data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#menghapus-data-yang-tidak-dibutuhkan">
+     Menghapus data yang tidak dibutuhkan
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#tf-idf">
+     TF-IDF
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lsa">
+   LSA
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -326,8 +543,172 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="lsa">
-<h1>LSA<a class="headerlink" href="#lsa" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="latent-semantic-analysis-lsa">
+<h1>Latent Semantic Analysis (LSA)<a class="headerlink" href="#latent-semantic-analysis-lsa" title="Permalink to this headline">#</a></h1>
+<p>Latent Semantic Analysis (LSA) merupakan sebuah metode yang memanfaatkan model statistik matematis untuk menganalisa struktur semantik suatu teks. LSA bisa digunakan untuk menilai esai dengan mengkonversikan esai menjadi matriks-matriks yang diberi nilai pada masing-masing term untuk dicari kesamaan dengan term referensi</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="crawling-data">
+<h1>Crawling data<a class="headerlink" href="#crawling-data" title="Permalink to this headline">#</a></h1>
+<p>Crawlling merupakan proses pengambilan data yang tersedia secara online untuk umum. Proses pengambilan data informasi pada halaman menggunakan URL (Uniform Resource Locator). URL ini akan menjadi acuan untuk mencari semua hyperlink yang ada pada website. Kemudian dilakukan indexing untuk mencari kata dalam dokumen pada setiap link yang ada. Lalu jika, menyertakan API (Application Programming Interface) dapat melakukan penambangan dataset yang lebih besar. Selain itu, dengan API kita dapat mengumpulkan data lebih spesifik sesuai dengan link URL yang ada tanpa harus mengetahui element HTML pada sebuah website.</p>
+<section id="instalasi-scrapy">
+<h2>Instalasi Scrapy<a class="headerlink" href="#instalasi-scrapy" title="Permalink to this headline">#</a></h2>
+<p>Untuk menginstall scrapy dapat menggnakan perintah pip di Command Prompt berikut:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">scrapy</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>^C
+Collecting scrapy
+  Using cached Scrapy-2.6.1-py2.py3-none-any.whl (264 kB)
+Collecting pyOpenSSL&gt;=16.2.0
+  Using cached pyOpenSSL-22.0.0-py2.py3-none-any.whl (55 kB)
+Collecting zope.interface&gt;=4.1.3
+  Downloading zope.interface-5.4.0.tar.gz (249 kB)
+     ------------------------------------ 249.3/249.3 kB 306.1 kB/s eta 0:00:00
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status &#39;done&#39;
+Collecting Twisted&gt;=17.9.0
+  Downloading Twisted-22.4.0-py3-none-any.whl (3.1 MB)
+     ---------------------------------------- 3.1/3.1 MB 699.2 kB/s eta 0:00:00
+Collecting itemloaders&gt;=1.0.1
+  Using cached itemloaders-1.0.4-py3-none-any.whl (11 kB)
+Collecting w3lib&gt;=1.17.0
+  Using cached w3lib-1.22.0-py2.py3-none-any.whl (20 kB)
+Collecting protego&gt;=0.1.15
+  Using cached Protego-0.2.1-py2.py3-none-any.whl (8.2 kB)
+Collecting itemadapter&gt;=0.1.0
+  Downloading itemadapter-0.6.0-py3-none-any.whl (10 kB)
+Collecting tldextract
+  Downloading tldextract-3.3.0-py3-none-any.whl (93 kB)
+     -------------------------------------- 93.6/93.6 kB 410.5 kB/s eta 0:00:00
+Collecting cssselect&gt;=0.9.1
+  Using cached cssselect-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting queuelib&gt;=1.4.2
+  Using cached queuelib-1.6.2-py2.py3-none-any.whl (13 kB)
+Collecting parsel&gt;=1.5.0
+  Using cached parsel-1.6.0-py2.py3-none-any.whl (13 kB)
+Collecting service-identity&gt;=16.0.0
+  Using cached service_identity-21.1.0-py2.py3-none-any.whl (12 kB)
+Requirement already satisfied: setuptools in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from scrapy) (58.1.0)
+Collecting lxml&gt;=3.5.0
+  Downloading lxml-4.9.0-cp310-cp310-win_amd64.whl (3.6 MB)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="membuat-file-scrapy">
+<h2>Membuat File Scrapy<a class="headerlink" href="#membuat-file-scrapy" title="Permalink to this headline">#</a></h2>
+<p>Setelah selesai menginstall Scrapy, maka buat file scrapy baru dengan kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scrapy</span> <span class="n">startproject</span> <span class="n">namaproject</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menjalankan-spyder-baru">
+<h2>Menjalankan Spyder baru<a class="headerlink" href="#menjalankan-spyder-baru" title="Permalink to this headline">#</a></h2>
+<p>Yang harus dilakukan, masuk ke dalam projectscrapy kemudian membuat spider baru dengan kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">nama</span> <span class="n">project</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Setelah menjalankan spyder baru, tuliskan command yang isinya nama file dan alamat website yang akan diambil datanya agar lebih mudah saat akan membuat.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scrapy</span> <span class="n">genspider</span> <span class="n">example</span> <span class="n">example</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menulis-program-scapper">
+<h2>Menulis Program Scapper<a class="headerlink" href="#menulis-program-scapper" title="Permalink to this headline">#</a></h2>
+<p>Setelah itu, pada pembuatan spyder file yang tadi telah dibuat telah tersedia dengan nama file yang telah dibuat.</p>
+<p>Pada file yang telah dibuat akan ada code untuk melakukan scraping yang dapat diubah sesuai keinginan</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scrapy</span>
+<span class="k">class</span> <span class="nc">QuotesSpider</span><span class="p">(</span><span class="n">scrapy</span><span class="o">.</span><span class="n">Spider</span><span class="p">):</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;quotes&quot;</span>
+
+    <span class="k">def</span> <span class="nf">start_requests</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160411100077&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160211100071&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160531100046&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160521100004&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160541100008&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/150721100036&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160721100026&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160421100099&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/150721100026&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160521100008&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160421100169&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160211100041&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160311100017&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/130611100192&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;https://pta.trunojoyo.ac.id/welcome/detail/160521100043&#39;</span>
+        <span class="p">]</span>
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">scrapy</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">url</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">response</span><span class="p">):</span>
+        <span class="c1"># print(response.url)</span>
+        <span class="k">yield</span> <span class="p">{</span>
+            <span class="s1">&#39;judul&#39;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(2) &gt; a::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">(),</span>
+            <span class="s1">&#39;penulis&#39;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(2) &gt; div:nth-child(2) &gt; span::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">(),</span>
+            <span class="s1">&#39;dosen_pembimbing_1&#39;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(2) &gt; div:nth-child(3) &gt; span::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">(),</span>
+            <span class="s1">&#39;dosen_pembimbing_2&#39;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(2) &gt; div:nth-child(4) &gt; span::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">(),</span>
+            <span class="s1">&#39;abstrak&#39;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">css</span><span class="p">(</span><span class="s1">&#39;#content_journal &gt; ul &gt; li &gt; div:nth-child(4) &gt; div:nth-child(2) &gt; p::text&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">extract</span><span class="p">(),</span>
+        <span class="p">}</span>
+        <span class="c1"># content_journal &gt; ul &gt; li:nth-child(1) &gt; div:nth-child(1) &gt; a</span>
+        <span class="c1"># content_journal &gt; ul &gt; li:nth-child(1) &gt; div:nth-child(1) &gt; a</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menjalankan-file-spider">
+<h2>Menjalankan File Spider<a class="headerlink" href="#menjalankan-file-spider" title="Permalink to this headline">#</a></h2>
+<p>Pertama, masuk kedalam direktori spider dulu. setelah itu, jalankan spider dengan command</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scrapy</span> <span class="n">runspider</span> <span class="n">namafile</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="menyimpan-data-kedalam-csv">
+<h2>Menyimpan data kedalam csv<a class="headerlink" href="#menyimpan-data-kedalam-csv" title="Permalink to this headline">#</a></h2>
+<p>Data yang telah diambil dari suatu web dapat disimpan dengan kode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scrapy</span> <span class="n">crawl</span> <span class="n">namafile</span> <span class="o">-</span><span class="n">O</span> <span class="n">namafileyangdiinginkan</span><span class="o">.</span><span class="n">xlsx</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="preprocessing-data">
+<h1>Preprocessing data<a class="headerlink" href="#preprocessing-data" title="Permalink to this headline">#</a></h1>
+<p>Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata, link, atau hal –hal yang tidak diperlukan untuk melakukan analisis sentiment. Dataset yang diperoleh dari proses crawling masih berbentuk kata atau kalimat yang tidak beraturan atau tidak terstruktur, sehingga membutuhkan proses yang disebut preprocessing data agar menghasilkan data yang bersih supaya mempermudah proses analisis. Lalu pada Preprocessing sendiri melibatkan validasi dan imputasi data. Tujuan dari validasi adalah untuk menilai tingkat kelengkapan dan akurasi data yang tersaring. Preprocessing data sangat penting karena kesalahan, redundan, missing value, dan data yang tidak konsisten menyebabkan berkurangnya akurasi hasil analisis. Jadi, sebelum mengolah data, kita harus memastikan bahwa data yang akan kita gunakan merupakan data “bersih”. Ada beberapa cara yang bisa digunakan untuk membersihkan data, tergantung dari jenis masalah yang ada dalam kumpulan data. Adapun tahapan preprocessing data terdiri dari Cleaning data, Case Folding, Tokenizing, Stopword, dan Stemming.</p>
+<section id="installasi-library">
+<h2>Installasi library<a class="headerlink" href="#installasi-library" title="Permalink to this headline">#</a></h2>
+<p>lakukan installasi library yang diperlukan, jika telah terinstall maka langsung panggil saja</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install nltk
@@ -337,23 +718,20 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nltk in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (3.7)
-Requirement already satisfied: joblib in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (1.1.0)
-Requirement already satisfied: click in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (8.1.2)
-Requirement already satisfied: regex&gt;=2021.8.3 in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (2022.6.2)
-Requirement already satisfied: tqdm in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (4.64.0)
-Requirement already satisfied: colorama in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from click-&gt;nltk) (0.4.4)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (1.23.0)
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: nltk in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (3.7)
-Requirement already satisfied: tqdm in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (4.64.0)
-Requirement already satisfied: click in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (8.1.2)
-Requirement already satisfied: regex&gt;=2021.8.3 in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (2022.6.2)
-Requirement already satisfied: joblib in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from nltk) (1.1.0)
-Requirement already satisfied: colorama in c:\users\asus\appdata\local\programs\python\python310\lib\site-packages (from click-&gt;nltk) (0.4.4)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: nltk in /usr/local/lib/python3.7/dist-packages (3.7)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.7/dist-packages (from nltk) (4.64.0)
+Requirement already satisfied: regex&gt;=2021.8.3 in /usr/local/lib/python3.7/dist-packages (from nltk) (2022.6.2)
+Requirement already satisfied: click in /usr/local/lib/python3.7/dist-packages (from nltk) (7.1.2)
+Requirement already satisfied: joblib in /usr/local/lib/python3.7/dist-packages (from nltk) (1.1.0)
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: numpy in /usr/local/lib/python3.7/dist-packages (1.21.6)
+Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: pandas in /usr/local/lib/python3.7/dist-packages (1.3.5)
+Requirement already satisfied: python-dateutil&gt;=2.7.3 in /usr/local/lib/python3.7/dist-packages (from pandas) (2.8.2)
+Requirement already satisfied: numpy&gt;=1.17.3 in /usr/local/lib/python3.7/dist-packages (from pandas) (1.21.6)
+Requirement already satisfied: pytz&gt;=2017.3 in /usr/local/lib/python3.7/dist-packages (from pandas) (2022.1)
+Requirement already satisfied: six&gt;=1.5 in /usr/local/lib/python3.7/dist-packages (from python-dateutil&gt;=2.7.3-&gt;pandas) (1.15.0)
 </pre></div>
 </div>
 </div>
@@ -368,20 +746,25 @@ Requirement already satisfied: colorama in c:\users\asus\appdata\local\programs\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="nn">Input In [2],</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;stopwords&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;wordnet&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;nltk&#39; is not defined
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package stopwords to /root/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Package punkt is already up-to-date!
+[nltk_data] Downloading package wordnet to /root/nltk_data...
+[nltk_data]   Package wordnet is already up-to-date!
+[nltk_data] Downloading package omw-1.4 to /root/nltk_data...
+[nltk_data]   Unzipping corpora/omw-1.4.zip.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
 </div>
-<p>#Preprocessing data
-Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata, link, atau hal –hal yang tidak diperlukan untuk melakukan analisis sentiment. Dataset yang diperoleh dari proses crawling masih berbentuk kata atau kalimat yang tidak beraturan atau tidak terstruktur, sehingga membutuhkan proses yang disebut preprocessing data agar menghasilkan data yang bersih supaya mempermudah proses analisis. Lalu pada Preprocessing sendiri melibatkan validasi dan imputasi data. Tujuan dari validasi adalah untuk menilai tingkat kelengkapan dan akurasi data yang tersaring. Preprocessing data sangat penting karena kesalahan, redundan, missing value, dan data yang tidak konsisten menyebabkan berkurangnya akurasi hasil analisis. Jadi, sebelum mengolah data, kita harus memastikan bahwa data yang akan kita gunakan merupakan data “bersih”. Ada beberapa cara yang bisa digunakan untuk membersihkan data, tergantung dari jenis masalah yang ada dalam kumpulan data. Adapun tahapan preprocessing data terdiri dari Cleaning data, Case Folding, Tokenizing, Stopword, dan Stemming.</p>
+</section>
+<section id="import-library-yang-digunakan">
+<h2>Import library yang digunakan<a class="headerlink" href="#import-library-yang-digunakan" title="Permalink to this headline">#</a></h2>
+<p>memanggil library-library yang digunakan</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># data visualisation and manipulation</span>
@@ -420,10 +803,13 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 </div>
 </div>
-<p>#Data set</p>
+</section>
+<section id="data-set">
+<h2>Data set<a class="headerlink" href="#data-set" title="Permalink to this headline">#</a></h2>
+<p>berikut data yang digunakan pada program saat ini</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;jurnal.csv&#39;</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span><span class="p">[</span><span class="s1">&#39;Abstrak_indo&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;jurnal.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -435,10 +821,134 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-51df4286-9d00-43fa-95e4-3a46dced0d74">
-    <div class="colab-df-container">
-      <div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Judul</th>
+      <th>Penulis</th>
+      <th>Dosbing_1</th>
+      <th>Dosbing_2</th>
+      <th>Abstrak_indo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>APLIKASI DAN DESAIN MODEL DECISION AID PELANGG...</td>
+      <td>Ardiyanto Setiawan</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT.</td>
+      <td>eni Kustiyah Ningsih, S.Kom., M.Kom.</td>
+      <td>Toko Batik Tulis Madura merupakan salah satu t...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ANALISA DATA ANTARAN POS EXPRESS MENGGUNAKAN\r...</td>
+      <td>siti murtasiyah warda</td>
+      <td>Bain Khusnul Khotimah.,S.T.,M.Kom</td>
+      <td>irli Irhamni, S.T., M.Kom.</td>
+      <td>PT. Pos Indonesia (Persero) merupakan salah sa...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Model Penjualan Produk Unggulan Batik Khas Pam...</td>
+      <td>Murni Rotifah</td>
+      <td>Moch. Kautsar Sophan, S.Kom, M.MT</td>
+      <td>ain Khusnul Khotimah, S.T., M.Kom</td>
+      <td>Kabupaten Pamekasan merupakan salah satu pusat...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PENERAPAN METODE ANALYTICAL HIERARCHY PROCESS ...</td>
+      <td>Helyatin</td>
+      <td>Bain Khusnul K, S.T.,M.Kom</td>
+      <td>ndharini Dwi C, S.Kom.,M.Kom</td>
+      <td>Pemilihan  supplier merupakan salah satu isu p...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>PENGELOMPOKAN KUALITAS KELAS PADA SISWA MENGGU...</td>
+      <td>Hamiyah</td>
+      <td>Bain Khusnul K,ST.,M.Kom</td>
+      <td>irli Irhamni, ST, M. Kom</td>
+      <td>ABSTRAK\r\nData yang terdapat pada SMA Wachid ...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>SISTEM PENDUKUNG KEPUTUSAN PEMILIHAN KARYAWAN ...</td>
+      <td>Catur Ngesti Waluyo</td>
+      <td>Mula'ab,S.Si.,M.Kom</td>
+      <td>iza Alfita, S.T., M.T</td>
+      <td>Sumber daya manusia mutlak dibutuhkan untuk ke...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Deteksi Manusia Menggunakan Histogram of Orien...</td>
+      <td>R.A. Uluwiyah Nur Oktavianis</td>
+      <td>Dr. Indah Agustien, S.Kom., M.Kom</td>
+      <td>ri Kusumaningsih, S.T, M.T</td>
+      <td>Deteksi manusia merupakan  suatu aplikasi yang...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>KLASIFIKASI STATUS GIZI BALITA MENGGUNAKAN KOH...</td>
+      <td>Uhty Zunairoh</td>
+      <td>Bain Khusnul Khotimah, S.T., M.Kom.</td>
+      <td>eri Rachmad, S.T., M.T.</td>
+      <td>Aplikasi klasifikasi status gizi balita ini di...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Aplikasi Penilaian Kinerja dengan Metodologi C...</td>
+      <td>Luthfi Zahro</td>
+      <td>Moch. Kautsar Sophan, S.Kom., M.MT</td>
+      <td>r. Rachmad Hidayat, ST., MT</td>
+      <td>Setiap perusahaan mengharapkan adanya hubungan...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>APLIKASI CITRA MOSAIC PANORAMIC MENGGUNAKAN ME...</td>
+      <td>Gendra Budiarti</td>
+      <td>Eza Rahmanita, ST, MT</td>
+      <td>eidya Koeshardianto, S.Si, MT</td>
+      <td>Sebuah citra banyak diterapkan dalam berbagai ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="drop-data-yang-tidak-digunakan">
+<h2>Drop data yang tidak digunakan<a class="headerlink" href="#drop-data-yang-tidak-digunakan" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Judul&#39;</span><span class="p">,</span><span class="s1">&#39;Penulis&#39;</span><span class="p">,</span> <span class="s1">&#39;Dosbing_1&#39;</span><span class="p">,</span> <span class="s1">&#39;Dosbing_2&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -500,119 +1010,114 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
       <th>9</th>
       <td>Sebuah citra banyak diterapkan dalam berbagai ...</td>
     </tr>
+    <tr>
+      <th>10</th>
+      <td>Penggunaan teknologi mobile saat ini sangat ma...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Perkembangan game yang semakin pesat, memberik...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Teknologi mobile game beroperating system open...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Gerak pekerja ada pada game yang memiliki genr...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Sistem  informasi  akademik  (SIAKAD) merupaka...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Teknik kalibrasi sangat berpengaruh terhadap p...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Berjalannya koneksi jaringan komputer dengan l...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Malaria disebabkan oleh intraseluler parasit b...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Web server adalah sebuah perangkat lunak serve...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Penjadwalan  kuliah  di  Perguruan  Tinggi  me...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Seiring perkembangan teknologi yang ada diduni...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Citra senyum merupakan salah satu fitur biomet...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Kebutuhan pencarian data pada internet yang ce...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Penelitian ini membahas tentang perancangan si...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Dengan prediksi yang baik, dapat dibuat rencan...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Menurut pemetaan yang dilakukan oleh Tim Nasio...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Diagnosa penyakit mata dengan sistem informasi...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Berawal dari permintaan akan Straw (sperma bek...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Pengetahuan tentang bahasa Inggris pada jaman ...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Sistem pengenalan wajah adalah suatu sistem un...</td>
+    </tr>
   </tbody>
 </table>
+</div></div></div>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-51df4286-9d00-43fa-95e4-3a46dced0d74')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-51df4286-9d00-43fa-95e4-3a46dced0d74 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-51df4286-9d00-43fa-95e4-3a46dced0d74');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-</div></div>
-</div>
-<p>#Cleansing data</p>
-<p>Data cleansing atau yang disebut juga dengan data scrubbing merupakan suatu proses analisa mengenai kualitas dari data dengan mengubah. Bisa juga pengelola mengoreksi ataupun menghapus data tersebut. Data yang dibersihkan tersebut adalah data yang salah, rusak, tidak akurat, tidak lengkap dan salah format. Selain itu, Cleaning data adalah proses menghilangkan atau  menghapus  data  dari  suatu  kalimat  yang  memiliki unsur, seperti username (&#64;username), hastag (#), URL, angka, kalimat yang redundance,emoticon (:&#64;, :D ), dan tanda baca  yang tidak diperlukan pada saat proses analisis sentiment. Pada proses cleaningini pun juga terjadi proses perubahan data ke lowercase.</p>
+</section>
+<section id="remove-angka">
+<h2>Remove angka<a class="headerlink" href="#remove-angka" title="Permalink to this headline">#</a></h2>
+<p>pada proses ini penghapusan angka dan tanda-tanda baca yang ada pada data</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">headline</span><span class="p">):</span>
-  <span class="n">le</span><span class="o">=</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
-  <span class="n">word_tokens</span><span class="o">=</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">headline</span><span class="p">)</span>
-  <span class="n">tokens</span><span class="o">=</span><span class="p">[</span><span class="n">le</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word_tokens</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
-  <span class="n">cleaned_text</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
-  <span class="k">return</span> <span class="n">cleaned_text</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span> 
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">def</span> <span class="nf">remove</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\d+&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># time taking</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak_indo_cleaned&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak_indo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak_indo_remove&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak_indo&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">remove</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-8a40e82e-18d3-4308-9f09-070323dc7793">
-    <div class="colab-df-container">
-      <div>
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -631,7 +1136,7 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
     <tr style="text-align: right;">
       <th></th>
       <th>Abstrak_indo</th>
-      <th>Abstrak_indo_cleaned</th>
+      <th>Abstrak_indo_remove</th>
     </tr>
   </thead>
   <tbody>
@@ -643,7 +1148,7 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
     <tr>
       <th>1</th>
       <td>PT. Pos Indonesia (Persero) merupakan salah sa...</td>
-      <td>Indonesia Persero merupakan salah satu perusah...</td>
+      <td>PT. Pos Indonesia (Persero) merupakan salah sa...</td>
     </tr>
     <tr>
       <th>2</th>
@@ -653,96 +1158,37 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
     <tr>
       <th>3</th>
       <td>Pemilihan  supplier merupakan salah satu isu p...</td>
-      <td>Pemilihan supplier merupakan salah satu pentin...</td>
+      <td>Pemilihan  supplier merupakan salah satu isu p...</td>
     </tr>
     <tr>
       <th>4</th>
       <td>ABSTRAK\r\nData yang terdapat pada SMA Wachid ...</td>
-      <td>ABSTRAK Data yang terdapat pada Wachid Hasyim ...</td>
+      <td>ABSTRAK\r\nData yang terdapat pada SMA Wachid ...</td>
     </tr>
   </tbody>
 </table>
+</div></div></div>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-8a40e82e-18d3-4308-9f09-070323dc7793')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-8a40e82e-18d3-4308-9f09-070323dc7793 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-8a40e82e-18d3-4308-9f09-070323dc7793');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-</div></div>
+</section>
+<section id="cleansing-data">
+<h2>Cleansing data<a class="headerlink" href="#cleansing-data" title="Permalink to this headline">#</a></h2>
+<p>Data cleansing atau yang disebut juga dengan data scrubbing merupakan suatu proses analisa mengenai kualitas dari data dengan mengubah. Bisa juga pengelola mengoreksi ataupun menghapus data tersebut. Data yang dibersihkan tersebut adalah data yang salah, rusak, tidak akurat, tidak lengkap dan salah format. Selain itu, Cleaning data adalah proses menghilangkan atau  menghapus  data  dari  suatu  kalimat  yang  memiliki unsur, seperti username (&#64;username), hastag (#), URL, angka, kalimat yang redundance,emoticon (:&#64;, :D ), dan tanda baca  yang tidak diperlukan pada saat proses analisis sentiment. Pada proses cleaningini pun juga terjadi proses perubahan data ke lowercase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">clean_text</span><span class="p">(</span><span class="n">headline</span><span class="p">):</span>
+  <span class="n">le</span><span class="o">=</span><span class="n">WordNetLemmatizer</span><span class="p">()</span>
+  <span class="n">word_tokens</span><span class="o">=</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">headline</span><span class="p">)</span>
+  <span class="n">tokens</span><span class="o">=</span><span class="p">[</span><span class="n">le</span><span class="o">.</span><span class="n">lemmatize</span><span class="p">(</span><span class="n">w</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">word_tokens</span> <span class="k">if</span> <span class="n">w</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">stop_words</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">w</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">3</span><span class="p">]</span>
+  <span class="n">cleaned_text</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">cleaned_text</span>
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Abstrak_indo&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># time taking</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak_indo_cleaned&#39;</span><span class="p">]</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Abstrak_indo_remove&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">clean_text</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -754,10 +1200,83 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">
-  <div id="df-3e88d66e-8140-4a64-9a8a-17bda0c85149">
-    <div class="colab-df-container">
-      <div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Abstrak_indo</th>
+      <th>Abstrak_indo_remove</th>
+      <th>Abstrak_indo_cleaned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Toko Batik Tulis Madura merupakan salah satu t...</td>
+      <td>Toko Batik Tulis Madura merupakan salah satu t...</td>
+      <td>Toko Batik Tulis Madura merupakan salah satu t...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>PT. Pos Indonesia (Persero) merupakan salah sa...</td>
+      <td>PT. Pos Indonesia (Persero) merupakan salah sa...</td>
+      <td>Indonesia Persero merupakan salah satu perusah...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Kabupaten Pamekasan merupakan salah satu pusat...</td>
+      <td>Kabupaten Pamekasan merupakan salah satu pusat...</td>
+      <td>Kabupaten Pamekasan merupakan salah satu pusat...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Pemilihan  supplier merupakan salah satu isu p...</td>
+      <td>Pemilihan  supplier merupakan salah satu isu p...</td>
+      <td>Pemilihan supplier merupakan salah satu pentin...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ABSTRAK\r\nData yang terdapat pada SMA Wachid ...</td>
+      <td>ABSTRAK\r\nData yang terdapat pada SMA Wachid ...</td>
+      <td>ABSTRAK Data yang terdapat pada Wachid Hasyim ...</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="menghapus-data-yang-tidak-dibutuhkan">
+<h2>Menghapus data yang tidak dibutuhkan<a class="headerlink" href="#menghapus-data-yang-tidak-dibutuhkan" title="Permalink to this headline">#</a></h2>
+<p>hal ini bertujuan agar menggunakan data yang telah di cleansing data</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;Abstrak_indo&#39;</span><span class="p">,</span> <span class="s1">&#39;Abstrak_indo_remove&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
@@ -801,83 +1320,7 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
     </tr>
   </tbody>
 </table>
-</div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-3e88d66e-8140-4a64-9a8a-17bda0c85149')"
-              title="Convert this dataframe to an interactive table."
-              style="display:none;">
-
-  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
-       width="24px">
-    <path d="M0 0h24v24H0V0z" fill="none"/>
-    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
-  </svg>
-      </button>
-
-  <style>
-    .colab-df-container {
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-    }
-
-    .colab-df-convert {
-      background-color: #E8F0FE;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-      display: none;
-      fill: #1967D2;
-      height: 32px;
-      padding: 0 0 0 0;
-      width: 32px;
-    }
-
-    .colab-df-convert:hover {
-      background-color: #E2EBFA;
-      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
-      fill: #174EA6;
-    }
-
-    [theme=dark] .colab-df-convert {
-      background-color: #3B4455;
-      fill: #D2E3FC;
-    }
-
-    [theme=dark] .colab-df-convert:hover {
-      background-color: #434B5C;
-      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
-      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
-      fill: #FFFFFF;
-    }
-  </style>
-
-      <script>
-        const buttonEl =
-          document.querySelector('#df-3e88d66e-8140-4a64-9a8a-17bda0c85149 button.colab-df-convert');
-        buttonEl.style.display =
-          google.colab.kernel.accessAllowed ? 'block' : 'none';
-
-        async function convertToInteractive(key) {
-          const element = document.querySelector('#df-3e88d66e-8140-4a64-9a8a-17bda0c85149');
-          const dataTable =
-            await google.colab.kernel.invokeFunction('convertToInteractive',
-                                                     [key], {});
-          if (!dataTable) return;
-
-          const docLinkHtml = 'Like what you see? Visit the ' +
-            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
-            + ' to learn more about interactive tables.';
-          element.innerHTML = '';
-          dataTable['output_type'] = 'display_data';
-          await google.colab.output.renderOutput(dataTable, element);
-          const docLink = document.createElement('div');
-          docLink.innerHTML = docLinkHtml;
-          element.appendChild(docLink);
-        }
-      </script>
-    </div>
-  </div>
-</div></div>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -886,11 +1329,26 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Toko Batik Tulis Madura merupakan salah satu toko yang telah beroperasi sejak tahun 2011 dengan menggunakan website e-commerce Walau telah menggunakan model e-commerce website tersebut memiliki kekurangan yaitu belum fitur rekomndasi untuk memudahkan konsumen mencari barang yang ingin dibelinya Penelitian bertujuan membuat rekomendasi dengan decision untuk membantu pelanggan dalam memilih produk website Toko Batik Tulis Madura Teknik pengumpulan analis data terdiri dari Studi Literatur yang berhubungan dengan decision multi criterion Observasi dilakukan terhadap website Toko Batik Tulis Madura Interview dilakukan kepada pemilik website Toko Batik Tulis Madura Pembuatan implementasi pada Penelitian menggunakan model waterfall Jenis decision yang akan diimplementasikan adalah Multi Criteria Filtering Metode pembobotan yang digunakan pada Multi Criteria Filtering yaitu Decision Matrix Hasil ujicoba dengan jumlah sample percobaan sebanyak kali data perconbaan pencarian presentase akurasi adalah error adalah Hasil kelayakan dari beberapa kuisoner dihasilkan bahwa performa yang dimiliki tool cukup baik tool layak untuk diintegrasikan serta digunakan dalam website e-commerce Kata Kunci Decision Multi Criteria Filtering&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Toko Batik Tulis Madura merupakan salah satu toko yang telah beroperasi sejak tahun dengan menggunakan website e-commerce Walau telah menggunakan model e-commerce website tersebut memiliki kekurangan yaitu belum fitur rekomndasi untuk memudahkan konsumen mencari barang yang ingin dibelinya Penelitian bertujuan membuat rekomendasi dengan decision untuk membantu pelanggan dalam memilih produk website Toko Batik Tulis Madura Teknik pengumpulan analis data terdiri dari Studi Literatur yang berhubungan dengan decision multi criterion Observasi dilakukan terhadap website Toko Batik Tulis Madura Interview dilakukan kepada pemilik website Toko Batik Tulis Madura Pembuatan implementasi pada Penelitian menggunakan model waterfall Jenis decision yang akan diimplementasikan adalah Multi Criteria Filtering Metode pembobotan yang digunakan pada Multi Criteria Filtering yaitu Decision Matrix Hasil ujicoba dengan jumlah sample percobaan sebanyak kali data perconbaan pencarian presentase akurasi adalah error adalah Hasil kelayakan dari beberapa kuisoner dihasilkan bahwa performa yang dimiliki tool cukup baik tool layak untuk diintegrasikan serta digunakan dalam website e-commerce Kata Kunci Decision Multi Criteria Filtering&#39;
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="tf-idf">
+<h2>TF-IDF<a class="headerlink" href="#tf-idf" title="Permalink to this headline">#</a></h2>
+<p>TF — IDF adalah suatu metode algoritma yang berguna untuk menghitung bobot setiap kata yang umum digunakan. Metode ini juga terkenal efisien, mudah dan memiliki hasil yang akurat. Metode ini akan menghitung nilai Term Frequency (TF) dan Inverse Document Frequency (IDF) pada setiap token (kata) di setiap dokumen dalam korpus. Secara sederhana, metode TF-IDF digunakan untuk mengetahui berapa sering suatu kata muncul di dalam dokumen.</p>
+<p>Term Frequency (TF) yaitu pembobotan/weight setiap kata (term) pada suatu dokumen berdasarkan jumlah kemunculannya dalam dokumen tersebut. Semakin besar jumlah kemunculan suatu kata dalam dokumen, maka semakin besar pula bobot yang diberikan (TF Tinggi) jadi nilai tertinggi merupakan  jumlah kemunculan/frekuensi.</p>
+<p>Setelah menentukan Tf maka selanjutnya kita tentukan nilai IDF nya dapat dihitung dengan rumus :
+$<span class="math notranslate nohighlight">\(
+\begin{gathered}
+Tf-Idf=t f_{i j} * i d f_{j} \\
+Tf-Idf=t f_{i j} * \log \left(\frac{D}{d f}\right)
+\end{gathered}
+\)</span>$</p>
+<p>Catatan</p>
+<p>Df = jumlah dokumen yang didalamnya memuat term tertentu</p>
+<p>D = Jumlah Dokumen yang di perbandingkan</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vect</span> <span class="o">=</span><span class="n">TfidfVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="n">stop_words</span><span class="p">,</span><span class="n">max_features</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span> 
@@ -915,61 +1373,2623 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(60, 1000)
-  (0, 965)	0.345916940950532
-  (0, 74)	0.22892583178997186
-  (0, 974)	0.25689155580262774
-  (0, 455)	0.21829375696477538
-  (0, 566)	0.027321748445371784
-  (0, 793)	0.02947993532903489
-  (0, 798)	0.03006449946217725
-  (0, 998)	0.10345794294041542
-  (0, 916)	0.07126015599083284
-  (0, 815)	0.0691833881901064
-  (0, 902)	0.0522709587080435
-  (0, 1)	0.06037522681742574
-  (0, 172)	0.0712712402708651
-  (0, 545)	0.06746551297761273
-  (0, 995)	0.41510032914063844
-  (0, 151)	0.20755016457031922
-  (0, 577)	0.11446291589498593
-  (0, 940)	0.027321748445371784
-  (0, 507)	0.030669578755966955
-  (0, 997)	0.06389484363010381
-  (0, 81)	0.0522709587080435
-  (0, 279)	0.0484232965748123
-  (0, 982)	0.05345343020314881
-  (0, 516)	0.054573439241193844
-  (0, 410)	0.06422288895065693
+  (0, 953)	0.3465491324939889
+  (0, 60)	0.22934421249875928
+  (0, 966)	0.2573610461627056
+  (0, 422)	0.21869270668595223
+  (0, 533)	0.027371681178565355
+  (0, 768)	0.029533812325534276
+  (0, 775)	0.030119444797511292
+  (0, 998)	0.10364702080532326
+  (0, 900)	0.07139038976278697
+  (0, 798)	0.06930982649879779
+  (0, 886)	0.052366488166568435
+  (0, 150)	0.07140149430024889
+  (0, 512)	0.06758881172864305
+  (0, 992)	0.4158589589927867
+  (0, 129)	0.20792947949639334
+  (0, 544)	0.11467210624937964
+  (0, 927)	0.027371681178565355
+  (0, 474)	0.030725629923272116
+  (0, 996)	0.06401161669042994
+  (0, 67)	0.052366488166568435
+  (0, 236)	0.04851179411562884
+  (0, 975)	0.05355112072518667
+  (0, 483)	0.05467317667148806
+  (0, 380)	0.0643402615406764
+  (0, 488)	0.05467317667148806
   :	:
-  (59, 299)	0.5335072980252071
-  (59, 530)	0.038242168129767516
-  (59, 850)	0.03625013266330325
-  (59, 9)	0.03625013266330325
-  (59, 719)	0.06385719606030678
-  (59, 65)	0.03366356073892819
-  (59, 971)	0.05927858866946746
-  (59, 699)	0.05572714486708515
-  (59, 550)	0.05927858866946746
-  (59, 471)	0.08635688504183862
-  (59, 213)	0.04469535280300667
-  (59, 847)	0.050372017047417686
-  (59, 253)	0.05282540399622831
-  (59, 86)	0.05572714486708515
-  (59, 514)	0.05282540399622831
-  (59, 390)	0.05572714486708515
-  (59, 633)	0.2963929433473373
-  (59, 792)	0.05282540399622831
-  (59, 667)	0.21130161598491323
-  (59, 340)	0.050372017047417686
-  (59, 789)	0.05572714486708515
-  (59, 458)	0.06385719606030678
-  (59, 226)	0.14062076146709188
-  (59, 589)	0.2109311422006378
-  (59, 927)	0.14062076146709188
+  (59, 256)	0.5377443307883311
+  (59, 497)	0.038545881537060143
+  (59, 833)	0.03653802563183533
+  (59, 2)	0.03653802563183533
+  (59, 687)	0.0643643400729009
+  (59, 51)	0.03393091155175158
+  (59, 963)	0.05974937008759234
+  (59, 667)	0.0561697212657046
+  (59, 517)	0.05974937008759234
+  (59, 438)	0.08704271811778337
+  (59, 910)	0.0643643400729009
+  (59, 186)	0.04505031640872809
+  (59, 830)	0.05077206384596112
+  (59, 211)	0.05324493521592439
+  (59, 72)	0.0561697212657046
+  (59, 481)	0.05324493521592439
+  (59, 366)	0.0561697212657046
+  (59, 601)	0.2987468504379617
+  (59, 767)	0.05324493521592439
+  (59, 635)	0.21297974086369756
+  (59, 313)	0.05077206384596112
+  (59, 764)	0.0561697212657046
+  (59, 425)	0.0643643400729009
+  (59, 556)	0.21260632483370653
+  (59, 912)	0.1417375498891377
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vect</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>c:\Users\ASUS\Anaconda3\lib\site-packages\sklearn\utils\deprecation.py:87: FutureWarning: Function get_feature_names is deprecated; get_feature_names is deprecated in 1.0 and will be removed in 1.2. Please use get_feature_names_out instead.
+  warnings.warn(msg, category=FutureWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;abstrak&#39;,
+ &#39;adalah&#39;,
+ &#39;adanya&#39;,
+ &#39;administrator&#39;,
+ &#39;agar&#39;,
+ &#39;akademik&#39;,
+ &#39;akan&#39;,
+ &#39;akhir&#39;,
+ &#39;aksara&#39;,
+ &#39;akurasi&#39;,
+ &#39;akurat&#39;,
+ &#39;algoritma&#39;,
+ &#39;alternatif&#39;,
+ &#39;analisa&#39;,
+ &#39;analisis&#39;,
+ &#39;analysis&#39;,
+ &#39;analytic&#39;,
+ &#39;android&#39;,
+ &#39;angular&#39;,
+ &#39;animasi&#39;,
+ &#39;antar&#39;,
+ &#39;antara&#39;,
+ &#39;apabila&#39;,
+ &#39;aplikasi&#39;,
+ &#39;arah&#39;,
+ &#39;arosbaya&#39;,
+ &#39;arsitektur&#39;,
+ &#39;asesoris&#39;,
+ &#39;aspek&#39;,
+ &#39;atas&#39;,
+ &#39;atau&#39;,
+ &#39;augmented&#39;,
+ &#39;awal&#39;,
+ &#39;background&#39;,
+ &#39;backpropagation&#39;,
+ &#39;badan&#39;,
+ &#39;bagaimana&#39;,
+ &#39;bagi&#39;,
+ &#39;bagian&#39;,
+ &#39;bahan&#39;,
+ &#39;bahari&#39;,
+ &#39;bahasa&#39;,
+ &#39;bahkan&#39;,
+ &#39;bahwa&#39;,
+ &#39;baik&#39;,
+ &#39;baku&#39;,
+ &#39;bali&#39;,
+ &#39;balita&#39;,
+ &#39;bangkalan&#39;,
+ &#39;bangsa&#39;,
+ &#39;bantuan&#39;,
+ &#39;banyak&#39;,
+ &#39;banyaknya&#39;,
+ &#39;barang&#39;,
+ &#39;baru&#39;,
+ &#39;base&#39;,
+ &#39;basic&#39;,
+ &#39;basis&#39;,
+ &#39;basisdata&#39;,
+ &#39;batasan&#39;,
+ &#39;batik&#39;,
+ &#39;bawa&#39;,
+ &#39;bayes&#39;,
+ &#39;beasiswa&#39;,
+ &#39;beberapa&#39;,
+ &#39;bekerja&#39;,
+ &#39;belajar&#39;,
+ &#39;belum&#39;,
+ &#39;benedict&#39;,
+ &#39;bentuk&#39;,
+ &#39;berada&#39;,
+ &#39;beragam&#39;,
+ &#39;berapa&#39;,
+ &#39;berasal&#39;,
+ &#39;berbagai&#39;,
+ &#39;berbasis&#39;,
+ &#39;berbeda&#39;,
+ &#39;berbentuk&#39;,
+ &#39;berdasarkan&#39;,
+ &#39;berfokus&#39;,
+ &#39;berfungsi&#39;,
+ &#39;bergerak&#39;,
+ &#39;berhak&#39;,
+ &#39;berhasil&#39;,
+ &#39;berikutnya&#39;,
+ &#39;berjalan&#39;,
+ &#39;berjalannya&#39;,
+ &#39;berjumlah&#39;,
+ &#39;berkaitan&#39;,
+ &#39;berkembang&#39;,
+ &#39;berkesesuaian&#39;,
+ &#39;berprestasi&#39;,
+ &#39;bersifat&#39;,
+ &#39;berstatus&#39;,
+ &#39;bertujuan&#39;,
+ &#39;berupa&#39;,
+ &#39;berwarna&#39;,
+ &#39;besar&#39;,
+ &#39;biasa&#39;,
+ &#39;biaya&#39;,
+ &#39;bidang&#39;,
+ &#39;bila&#39;,
+ &#39;biometrik&#39;,
+ &#39;biometrika&#39;,
+ &#39;bisa&#39;,
+ &#39;bisnis&#39;,
+ &#39;bobot&#39;,
+ &#39;bold&#39;,
+ &#39;browser&#39;,
+ &#39;budaya&#39;,
+ &#39;bulan&#39;,
+ &#39;bumi&#39;,
+ &#39;canberra&#39;,
+ &#39;canny&#39;,
+ &#39;cara&#39;,
+ &#39;carakan&#39;,
+ &#39;centroid&#39;,
+ &#39;cepat&#39;,
+ &#39;chain&#39;,
+ &#39;cipherteks&#39;,
+ &#39;cirebon&#39;,
+ &#39;ciri&#39;,
+ &#39;citra&#39;,
+ &#39;class&#39;,
+ &#39;classifier&#39;,
+ &#39;client&#39;,
+ &#39;cluster&#39;,
+ &#39;clustering&#39;,
+ &#39;coba&#39;,
+ &#39;commerce&#39;,
+ &#39;component&#39;,
+ &#39;computer&#39;,
+ &#39;corepoint&#39;,
+ &#39;criteria&#39;,
+ &#39;cukup&#39;,
+ &#39;daerah&#39;,
+ &#39;dahulu&#39;,
+ &#39;dalam&#39;,
+ &#39;dapat&#39;,
+ &#39;darah&#39;,
+ &#39;dari&#39;,
+ &#39;dasar&#39;,
+ &#39;dasarnya&#39;,
+ &#39;data&#39;,
+ &#39;database&#39;,
+ &#39;datang&#39;,
+ &#39;daya&#39;,
+ &#39;decision&#39;,
+ &#39;delapan&#39;,
+ &#39;demikian&#39;,
+ &#39;dengan&#39;,
+ &#39;depth&#39;,
+ &#39;deteksi&#39;,
+ &#39;development&#39;,
+ &#39;diagnosa&#39;,
+ &#39;diambil&#39;,
+ &#39;diantaranya&#39;,
+ &#39;dibagi&#39;,
+ &#39;dibahas&#39;,
+ &#39;dibandingkan&#39;,
+ &#39;dibangun&#39;,
+ &#39;dibentuk&#39;,
+ &#39;diberikan&#39;,
+ &#39;dibuat&#39;,
+ &#39;dibuatlah&#39;,
+ &#39;dibuktikan&#39;,
+ &#39;dibutuhkan&#39;,
+ &#39;dicapai&#39;,
+ &#39;dicari&#39;,
+ &#39;didalam&#39;,
+ &#39;didapat&#39;,
+ &#39;didapatkan&#39;,
+ &#39;didasarkan&#39;,
+ &#39;didefinisikan&#39;,
+ &#39;diet&#39;,
+ &#39;digunakan&#39;,
+ &#39;diharapkan&#39;,
+ &#39;dihitung&#39;,
+ &#39;diimplementasikan&#39;,
+ &#39;diinputkan&#39;,
+ &#39;dijadikan&#39;,
+ &#39;dikarenakan&#39;,
+ &#39;dikembangkan&#39;,
+ &#39;diketahui&#39;,
+ &#39;dilakukan&#39;,
+ &#39;dilihat&#39;,
+ &#39;dimana&#39;,
+ &#39;dimanfaatkan&#39;,
+ &#39;dimensional&#39;,
+ &#39;dimiliki&#39;,
+ &#39;dinas&#39;,
+ &#39;diperlukan&#39;,
+ &#39;diperoleh&#39;,
+ &#39;dipilih&#39;,
+ &#39;diproses&#39;,
+ &#39;direction&#39;,
+ &#39;diri&#39;,
+ &#39;disebabkan&#39;,
+ &#39;disebut&#39;,
+ &#39;disimpan&#39;,
+ &#39;distance&#39;,
+ &#39;ditampilkan&#39;,
+ &#39;diteliti&#39;,
+ &#39;ditentukan&#39;,
+ &#39;diterapkan&#39;,
+ &#39;ditetapkan&#39;,
+ &#39;diuji&#39;,
+ &#39;dokter&#39;,
+ &#39;dokumen&#39;,
+ &#39;dunia&#39;,
+ &#39;efektif&#39;,
+ &#39;efisien&#39;,
+ &#39;ekstraksi&#39;,
+ &#39;empat&#39;,
+ &#39;engine&#39;,
+ &#39;engineering&#39;,
+ &#39;enkripsi&#39;,
+ &#39;enterprise&#39;,
+ &#39;epoch&#39;,
+ &#39;epoh&#39;,
+ &#39;error&#39;,
+ &#39;euclidean&#39;,
+ &#39;evaluasi&#39;,
+ &#39;exponential&#39;,
+ &#39;express&#39;,
+ &#39;fahp&#39;,
+ &#39;faktor&#39;,
+ &#39;fakultas&#39;,
+ &#39;fanp&#39;,
+ &#39;feature&#39;,
+ &#39;fighting&#39;,
+ &#39;filtering&#39;,
+ &#39;fine&#39;,
+ &#39;fingerprint&#39;,
+ &#39;finite&#39;,
+ &#39;first&#39;,
+ &#39;fitur&#39;,
+ &#39;flartoolkit&#39;,
+ &#39;fmop&#39;,
+ &#39;font&#39;,
+ &#39;forward&#39;,
+ &#39;function&#39;,
+ &#39;fungsi&#39;,
+ &#39;fuzzy&#39;,
+ &#39;gambar&#39;,
+ &#39;game&#39;,
+ &#39;gangguan&#39;,
+ &#39;gari&#39;,
+ &#39;gateway&#39;,
+ &#39;gejala&#39;,
+ &#39;genetika&#39;,
+ &#39;genre&#39;,
+ &#39;geografis&#39;,
+ &#39;geometry&#39;,
+ &#39;gerak&#39;,
+ &#39;gerakan&#39;,
+ &#39;gizi&#39;,
+ &#39;gldm&#39;,
+ &#39;global&#39;,
+ &#39;google&#39;,
+ &#39;government&#39;,
+ &#39;gradient&#39;,
+ &#39;gram&#39;,
+ &#39;gudang&#39;,
+ &#39;gunakan&#39;,
+ &#39;haar&#39;,
+ &#39;halaman&#39;,
+ &#39;hanya&#39;,
+ &#39;hari&#39;,
+ &#39;harus&#39;,
+ &#39;hasil&#39;,
+ &#39;hasilnya&#39;,
+ &#39;hasyim&#39;,
+ &#39;hierarchy&#39;,
+ &#39;histogram&#39;,
+ &#39;html&#39;,
+ &#39;http&#39;,
+ &#39;hubungan&#39;,
+ &#39;hujan&#39;,
+ &#39;huruf&#39;,
+ &#39;ideal&#39;,
+ &#39;identifikasi&#39;,
+ &#39;identitas&#39;,
+ &#39;implementasi&#39;,
+ &#39;indeks&#39;,
+ &#39;indikator&#39;,
+ &#39;indonesia&#39;,
+ &#39;industri&#39;,
+ &#39;info&#39;,
+ &#39;informasi&#39;,
+ &#39;informatika&#39;,
+ &#39;inggris&#39;,
+ &#39;ingin&#39;,
+ &#39;inilah&#39;,
+ &#39;instansi&#39;,
+ &#39;intelegent&#39;,
+ &#39;interaktif&#39;,
+ &#39;interface&#39;,
+ &#39;internet&#39;,
+ &#39;inti&#39;,
+ &#39;intinya&#39;,
+ &#39;invariant&#39;,
+ &#39;iptables&#39;,
+ &#39;italic&#39;,
+ &#39;jabatan&#39;,
+ &#39;jadwal&#39;,
+ &#39;jarak&#39;,
+ &#39;jari&#39;,
+ &#39;jaringan&#39;,
+ &#39;jauh&#39;,
+ &#39;java&#39;,
+ &#39;jelas&#39;,
+ &#39;jenis&#39;,
+ &#39;jika&#39;,
+ &#39;juga&#39;,
+ &#39;jumlah&#39;,
+ &#39;jurusan&#39;,
+ &#39;kabupaten&#39;,
+ &#39;kalangan&#39;,
+ &#39;kali&#39;,
+ &#39;kalibrasi&#39;,
+ &#39;kalori&#39;,
+ &#39;kamera&#39;,
+ &#39;kantor&#39;,
+ &#39;karakter&#39;,
+ &#39;karakteristik&#39;,
+ &#39;karapan&#39;,
+ &#39;karena&#39;,
+ &#39;karya&#39;,
+ &#39;karyawan&#39;,
+ &#39;kasus&#39;,
+ &#39;kata&#39;,
+ &#39;keakuratan&#39;,
+ &#39;keamanan&#39;,
+ &#39;kebutuhan&#39;,
+ &#39;kecamatan&#39;,
+ &#39;kecepatan&#39;,
+ &#39;kecerdasan&#39;,
+ &#39;kecil&#39;,
+ &#39;kedalam&#39;,
+ &#39;kegiatan&#39;,
+ &#39;kehidupan&#39;,
+ &#39;kelas&#39;,
+ &#39;kelebihan&#39;,
+ &#39;kelompok&#39;,
+ &#39;kemajuan&#39;,
+ &#39;kemampuan&#39;,
+ &#39;kembali&#39;,
+ &#39;kemiripan&#39;,
+ &#39;kemiskinan&#39;,
+ &#39;kemudian&#39;,
+ &#39;kemungkinan&#39;,
+ &#39;kendala&#39;,
+ &#39;kepada&#39;,
+ &#39;kepegawaian&#39;,
+ &#39;kepentingan&#39;,
+ &#39;keputusan&#39;,
+ &#39;keragaman&#39;,
+ &#39;kerapan&#39;,
+ &#39;kerja&#39;,
+ &#39;kesalahan&#39;,
+ &#39;kesamaan&#39;,
+ &#39;kesejahteraan&#39;,
+ &#39;kesejahteraannya&#39;,
+ &#39;keseluruhan&#39;,
+ &#39;kesesuaian&#39;,
+ &#39;kesimpulan&#39;,
+ &#39;kesulitan&#39;,
+ &#39;ketika&#39;,
+ &#39;keuntungan&#39;,
+ &#39;keypoint&#39;,
+ &#39;khas&#39;,
+ &#39;khususnya&#39;,
+ &#39;kinerja&#39;,
+ &#39;klasifikasi&#39;,
+ &#39;kode&#39;,
+ &#39;kompleks&#39;,
+ &#39;komputer&#39;,
+ &#39;koneksi&#39;,
+ &#39;konsep&#39;,
+ &#39;konsumen&#39;,
+ &#39;konteks&#39;,
+ &#39;kontrol&#39;,
+ &#39;korespondensi&#39;,
+ &#39;kriteria&#39;,
+ &#39;kromatin&#39;,
+ &#39;kualitas&#39;,
+ &#39;kuliah&#39;,
+ &#39;kunci&#39;,
+ &#39;kurang&#39;,
+ &#39;lahan&#39;,
+ &#39;lain&#39;,
+ &#39;lakukan&#39;,
+ &#39;lama&#39;,
+ &#39;lancar&#39;,
+ &#39;langkah&#39;,
+ &#39;lantai&#39;,
+ &#39;lapangan&#39;,
+ &#39;latent&#39;,
+ &#39;laut&#39;,
+ &#39;lawan&#39;,
+ &#39;layak&#39;,
+ &#39;layanan&#39;,
+ &#39;lazim&#39;,
+ &#39;learning&#39;,
+ &#39;least&#39;,
+ &#39;lebih&#39;,
+ &#39;lembut&#39;,
+ &#39;level&#39;,
+ &#39;leveling&#39;,
+ &#39;library&#39;,
+ &#39;life&#39;,
+ &#39;lima&#39;,
+ &#39;linear&#39;,
+ &#39;lintasan&#39;,
+ &#39;lokal&#39;,
+ &#39;lokasi&#39;,
+ &#39;luar&#39;,
+ &#39;luas&#39;,
+ &#39;lunak&#39;,
+ &#39;macam&#39;,
+ &#39;machine&#39;,
+ &#39;madura&#39;,
+ &#39;mahasiswa&#39;,
+ &#39;maka&#39;,
+ &#39;makanan&#39;,
+ &#39;maksimal&#39;,
+ &#39;malaria&#39;,
+ &#39;mamdani&#39;,
+ &#39;mampu&#39;,
+ &#39;mana&#39;,
+ &#39;manajemen&#39;,
+ &#39;mandiri&#39;,
+ &#39;manual&#39;,
+ &#39;manusia&#39;,
+ &#39;mape&#39;,
+ &#39;maps&#39;,
+ &#39;masa&#39;,
+ &#39;masalah&#39;,
+ &#39;masih&#39;,
+ &#39;masing&#39;,
+ &#39;masukan&#39;,
+ &#39;masyarakat&#39;,
+ &#39;mata&#39;,
+ &#39;matakuliah&#39;,
+ &#39;matematika&#39;,
+ &#39;materi&#39;,
+ &#39;matrik&#39;,
+ &#39;matrix&#39;,
+ &#39;maupun&#39;,
+ &#39;maya&#39;,
+ &#39;maze&#39;,
+ &#39;mcdm&#39;,
+ &#39;mean&#39;,
+ &#39;means&#39;,
+ &#39;measure&#39;,
+ &#39;medium&#39;,
+ &#39;melakukan&#39;,
+ &#39;melalui&#39;,
+ &#39;melihat&#39;,
+ &#39;memahami&#39;,
+ &#39;memaksimalkan&#39;,
+ &#39;memanfaatkan&#39;,
+ &#39;membahas&#39;,
+ &#39;membandingkan&#39;,
+ &#39;membangun&#39;,
+ &#39;membantu&#39;,
+ &#39;memberikan&#39;,
+ &#39;membuat&#39;,
+ &#39;membutuhkan&#39;,
+ &#39;memecahkan&#39;,
+ &#39;memenuhi&#39;,
+ &#39;memerlukan&#39;,
+ &#39;memilih&#39;,
+ &#39;memiliki&#39;,
+ &#39;mempercepat&#39;,
+ &#39;memperhatikan&#39;,
+ &#39;memperkirakan&#39;,
+ &#39;mempermudah&#39;,
+ &#39;memperoleh&#39;,
+ &#39;mempertahankan&#39;,
+ &#39;memprediksi&#39;,
+ &#39;mempunyai&#39;,
+ &#39;memudahkan&#39;,
+ &#39;memungkinkan&#39;,
+ &#39;menangani&#39;,
+ &#39;menarik&#39;,
+ &#39;mencapai&#39;,
+ &#39;mencari&#39;,
+ &#39;mencoba&#39;,
+ &#39;mencuri&#39;,
+ &#39;mendapat&#39;,
+ &#39;mendapatkan&#39;,
+ &#39;mendekripsi&#39;,
+ &#39;mendeteksi&#39;,
+ &#39;mendukung&#39;,
+ &#39;menemukan&#39;,
+ &#39;menentukan&#39;,
+ &#39;menerapkan&#39;,
+ &#39;menerima&#39;,
+ &#39;menetapkan&#39;,
+ &#39;mengakibatkan&#39;,
+ &#39;mengalami&#39;,
+ &#39;mengambil&#39;,
+ &#39;menganalisa&#39;,
+ &#39;mengatasi&#39;,
+ &#39;mengelompokan&#39;,
+ &#39;mengembangkan&#39;,
+ &#39;mengenai&#39;,
+ &#39;mengenkripsi&#39;,
+ &#39;mengerjakan&#39;,
+ &#39;mengetahui&#39;,
+ &#39;menggunakan&#39;,
+ &#39;menghasilkan&#39;,
+ &#39;mengidentifikasi&#39;,
+ &#39;mengimplementasikan&#39;,
+ &#39;mengirimkan&#39;,
+ &#39;mengontrol&#39;,
+ &#39;mengukur&#39;,
+ &#39;meningkatkan&#39;,
+ &#39;meningkatnya&#39;,
+ &#39;menjadi&#39;,
+ &#39;menjadikan&#39;,
+ &#39;menjaga&#39;,
+ &#39;mentah&#39;,
+ &#39;menu&#39;,
+ &#39;menunjukkan&#39;,
+ &#39;menyebabkan&#39;,
+ &#39;menyeleksi&#39;,
+ &#39;menyelesaikan&#39;,
+ &#39;merah&#39;,
+ &#39;meramalkan&#39;,
+ &#39;merepresentasikan&#39;,
+ &#39;merupakan&#39;,
+ &#39;mesin&#39;,
+ &#39;message&#39;,
+ &#39;metode&#39;,
+ &#39;metodologi&#39;,
+ &#39;minggu&#39;,
+ &#39;minimal&#39;,
+ &#39;minimnya&#39;,
+ &#39;mirip&#39;,
+ &#39;mitra&#39;,
+ &#39;mobile&#39;,
+ &#39;model&#39;,
+ &#39;modified&#39;,
+ &#39;monitoring&#39;,
+ &#39;morfologi&#39;,
+ &#39;mosaic&#39;,
+ &#39;mudah&#39;,
+ &#39;multi&#39;,
+ &#39;muncul&#39;,
+ &#39;mutlak&#39;,
+ &#39;naive&#39;,
+ &#39;namun&#39;,
+ &#39;nantinya&#39;,
+ &#39;naïve&#39;,
+ &#39;negara&#39;,
+ &#39;network&#39;,
+ &#39;neural&#39;,
+ &#39;nilai&#39;,
+ &#39;nn&#39;,
+ &#39;node&#39;,
+ &#39;nomor&#39;,
+ &#39;normal&#39;,
+ &#39;normalisasi&#39;,
+ &#39;nyata&#39;,
+ &#39;obat&#39;,
+ &#39;objective&#39;,
+ &#39;objek&#39;,
+ &#39;obyek&#39;,
+ &#39;obyektif&#39;,
+ &#39;oldinary&#39;,
+ &#39;oleh&#39;,
+ &#39;online&#39;,
+ &#39;ontologi&#39;,
+ &#39;operasi&#39;,
+ &#39;optimal&#39;,
+ &#39;optimasi&#39;,
+ &#39;optimiztion&#39;,
+ &#39;orang&#39;,
+ &#39;order&#39;,
+ &#39;ordered&#39;,
+ &#39;organisasi&#39;,
+ &#39;organizing&#39;,
+ &#39;oriented&#39;,
+ &#39;otomatis&#39;,
+ &#39;pada&#39;,
+ &#39;padatnya&#39;,
+ &#39;pakar&#39;,
+ &#39;paling&#39;,
+ &#39;pamekasan&#39;,
+ &#39;panorama&#39;,
+ &#39;panoramic&#39;,
+ &#39;para&#39;,
+ &#39;parameter&#39;,
+ &#39;parasit&#39;,
+ &#39;part&#39;,
+ &#39;particle&#39;,
+ &#39;pasang&#39;,
+ &#39;pasar&#39;,
+ &#39;pasien&#39;,
+ &#39;pekalongan&#39;,
+ &#39;pekerja&#39;,
+ &#39;pelajaran&#39;,
+ &#39;pelanggan&#39;,
+ &#39;pelanggannya&#39;,
+ &#39;pelatihan&#39;,
+ &#39;pelayanan&#39;,
+ &#39;pelevelan&#39;,
+ &#39;pemain&#39;,
+ &#39;pemanfaatan&#39;,
+ &#39;pembangunan&#39;,
+ &#39;pembelajaran&#39;,
+ &#39;pembelian&#39;,
+ &#39;pembentukan&#39;,
+ &#39;pembobotan&#39;,
+ &#39;pembuatan&#39;,
+ &#39;pemenang&#39;,
+ &#39;pemerintah&#39;,
+ &#39;pemetaan&#39;,
+ &#39;pemilihan&#39;,
+ &#39;peminat&#39;,
+ &#39;pemrograman&#39;,
+ &#39;pemrosesan&#39;,
+ &#39;penambahan&#39;,
+ &#39;penanggulangan&#39;,
+ &#39;pencarian&#39;,
+ &#39;pencocokan&#39;,
+ &#39;pendekatan&#39;,
+ &#39;pendeteksian&#39;,
+ &#39;pendidikan&#39;,
+ &#39;penduduk&#39;,
+ &#39;pendukung&#39;,
+ &#39;penelitian&#39;,
+ &#39;penentuan&#39;,
+ &#39;penerapan&#39;,
+ &#39;penerima&#39;,
+ &#39;pengalaman&#39;,
+ &#39;pengambilan&#39;,
+ &#39;pengawasan&#39;,
+ &#39;pengelolaan&#39;,
+ &#39;pengelompokan&#39;,
+ &#39;pengembang&#39;,
+ &#39;pengembangan&#39;,
+ &#39;pengenalan&#39;,
+ &#39;pengentasan&#39;,
+ &#39;pengetahuan&#39;,
+ &#39;penggabungan&#39;,
+ &#39;pengguna&#39;,
+ &#39;penggunaan&#39;,
+ &#39;penggunanya&#39;,
+ &#39;pengiriman&#39;,
+ &#39;pengklasifikasian&#39;,
+ &#39;pengolahan&#39;,
+ &#39;pengujian&#39;,
+ &#39;pengukuran&#39;,
+ &#39;pengumpulan&#39;,
+ &#39;penilaian&#39;,
+ &#39;peningkatan&#39;,
+ &#39;penjadwalan&#39;,
+ &#39;penjiplakan&#39;,
+ &#39;penjualan&#39;,
+ &#39;penting&#39;,
+ &#39;penulis&#39;,
+ &#39;penurunan&#39;,
+ &#39;penyajian&#39;,
+ &#39;penyakit&#39;,
+ &#39;penyampaian&#39;,
+ &#39;penyediaan&#39;,
+ &#39;penyusunan&#39;,
+ &#39;penyusupan&#39;,
+ &#39;peramalan&#39;,
+ &#39;peranan&#39;,
+ &#39;perancangan&#39;,
+ &#39;perangkat&#39;,
+ &#39;perangkingan&#39;,
+ &#39;peraturan&#39;,
+ &#39;perawatan&#39;,
+ &#39;perbandingan&#39;,
+ &#39;perbedaan&#39;,
+ &#39;percobaan&#39;,
+ &#39;perdagangan&#39;,
+ &#39;perencanaan&#39;,
+ &#39;performance&#39;,
+ &#39;pergudangan&#39;,
+ &#39;perhari&#39;,
+ &#39;perhatian&#39;,
+ &#39;perhitungan&#39;,
+ &#39;perilaku&#39;,
+ &#39;perindustrian&#39;,
+ &#39;periode&#39;,
+ &#39;perkembangan&#39;,
+ &#39;perlu&#39;,
+ &#39;permainan&#39;,
+ &#39;permasalahan&#39;,
+ &#39;permintaan&#39;,
+ &#39;peroleh&#39;,
+ &#39;perolehan&#39;,
+ &#39;persaingan&#39;,
+ &#39;persamaan&#39;,
+ &#39;persediaan&#39;,
+ &#39;persentase&#39;,
+ &#39;persero&#39;,
+ &#39;pertama&#39;,
+ &#39;pertanian&#39;,
+ &#39;pertumbuhan&#39;,
+ &#39;perubahan&#39;,
+ &#39;perusahaan&#39;,
+ &#39;pesan&#39;,
+ &#39;pesat&#39;,
+ &#39;peternakan&#39;,
+ &#39;pihak&#39;,
+ &#39;piksel&#39;,
+ &#39;pixel&#39;,
+ &#39;plagiarisme&#39;,
+ &#39;plastec&#39;,
+ &#39;platform&#39;,
+ &#39;player&#39;,
+ &#39;point&#39;,
+ &#39;pola&#39;,
+ &#39;pose&#39;,
+ &#39;prediksi&#39;,
+ &#39;preshion&#39;,
+ &#39;prim&#39;,
+ &#39;principal&#39;,
+ &#39;prioritas&#39;,
+ &#39;probabilitas&#39;,
+ &#39;process&#39;,
+ &#39;produk&#39;,
+ &#39;produksi&#39;,
+ &#39;produktivitas&#39;,
+ &#39;program&#39;,
+ &#39;programming&#39;,
+ &#39;promosi&#39;,
+ &#39;prose&#39;,
+ &#39;prosentase&#39;,
+ &#39;proses&#39;,
+ &#39;proxy&#39;,
+ &#39;proyek&#39;,
+ &#39;pulau&#39;,
+ &#39;puskesmas&#39;,
+ &#39;quantity&#39;,
+ &#39;quantization&#39;,
+ &#39;query&#39;,
+ &#39;radial&#39;,
+ &#39;rangka&#39;,
+ &#39;raskin&#39;,
+ &#39;rata&#39;,
+ &#39;rate&#39;,
+ &#39;rbf&#39;,
+ &#39;real&#39;,
+ &#39;reality&#39;,
+ &#39;recognition&#39;,
+ &#39;region&#39;,
+ &#39;rekayasa&#39;,
+ &#39;rekomendasi&#39;,
+ &#39;rencana&#39;,
+ &#39;rendah&#39;,
+ &#39;resolusi&#39;,
+ &#39;resource&#39;,
+ &#39;respon&#39;,
+ &#39;responden&#39;,
+ &#39;rule&#39;,
+ &#39;rumah&#39;,
+ &#39;rumput&#39;,
+ &#39;saat&#39;,
+ &#39;sakit&#39;,
+ &#39;salah&#39;,
+ &#39;sampai&#39;,
+ &#39;sampang&#39;,
+ &#39;sangat&#39;,
+ &#39;sangatlah&#39;,
+ &#39;sapi&#39;,
+ &#39;sarana&#39;,
+ &#39;satu&#39;,
+ &#39;satunya&#39;,
+ &#39;scale&#39;,
+ &#39;scorecard&#39;,
+ &#39;scoring&#39;,
+ &#39;screen&#39;,
+ &#39;sdlc&#39;,
+ &#39;search&#39;,
+ &#39;sebagai&#39;,
+ &#39;sebagian&#39;,
+ &#39;sebaliknya&#39;,
+ &#39;sebanyak&#39;,
+ &#39;sebelumnya&#39;,
+ &#39;sebesar&#39;,
+ &#39;sebuah&#39;,
+ &#39;secara&#39;,
+ &#39;second&#39;,
+ &#39;sedang&#39;,
+ &#39;sedangkan&#39;,
+ &#39;sedikit&#39;,
+ &#39;segmentasi&#39;,
+ &#39;sehingga&#39;,
+ &#39;seiring&#39;,
+ &#39;sejak&#39;,
+ &#39;sekumpulan&#39;,
+ &#39;selain&#39;,
+ &#39;selama&#39;,
+ &#39;selanjutnya&#39;,
+ &#39;seleksi&#39;,
+ &#39;self&#39;,
+ &#39;selisih&#39;,
+ &#39;seluas&#39;,
+ &#39;seluruh&#39;,
+ &#39;seluruhnya&#39;,
+ &#39;semakin&#39;,
+ &#39;semantic&#39;,
+ &#39;semantik&#39;,
+ &#39;sembilan&#39;,
+ &#39;semua&#39;,
+ &#39;sendiri&#39;,
+ &#39;seni&#39;,
+ &#39;senyum&#39;,
+ &#39;senyuman&#39;,
+ &#39;seorang&#39;,
+ &#39;sepanjang&#39;,
+ &#39;separation&#39;,
+ &#39;seperti&#39;,
+ &#39;sepuluh&#39;,
+ &#39;serangan&#39;,
+ &#39;series&#39;,
+ &#39;sering&#39;,
+ &#39;seringkali&#39;,
+ &#39;serta&#39;,
+ &#39;server&#39;,
+ &#39;service&#39;,
+ &#39;seseorang&#39;,
+ &#39;sesuai&#39;,
+ &#39;setelah&#39;,
+ &#39;setiap&#39;,
+ &#39;siakad&#39;,
+ &#39;sidik&#39;,
+ &#39;sift&#39;,
+ &#39;similaritas&#39;,
+ &#39;similarity&#39;,
+ &#39;simulasi&#39;,
+ &#39;single&#39;,
+ &#39;sistem&#39;,
+ &#39;siswa&#39;,
+ &#39;skala&#39;,
+ &#39;skenario&#39;,
+ &#39;smarter&#39;,
+ &#39;smartphone&#39;,
+ &#39;smoothing&#39;,
+ &#39;snort&#39;,
+ &#39;soal&#39;,
+ &#39;soalnya&#39;,
+ &#39;software&#39;,
+ &#39;solo&#39;,
+ &#39;solusi&#39;,
+ &#39;solusinya&#39;,
+ &#39;som&#39;,
+ &#39;sort&#39;,
+ &#39;source&#39;,
+ &#39;spare&#39;,
+ &#39;spci&#39;,
+ &#39;speech&#39;,
+ &#39;spesifikasi&#39;,
+ &#39;square&#39;,
+ &#39;stakeholder&#39;,
+ &#39;standar&#39;,
+ &#39;state&#39;,
+ &#39;statistik&#39;,
+ &#39;status&#39;,
+ &#39;stok&#39;,
+ &#39;strategy&#39;,
+ &#39;straw&#39;,
+ &#39;studi&#39;,
+ &#39;suatu&#39;,
+ &#39;sudah&#39;,
+ &#39;sulit&#39;,
+ &#39;sumber&#39;,
+ &#39;sumenep&#39;,
+ &#39;supaya&#39;,
+ &#39;supplier&#39;,
+ &#39;supply&#39;,
+ &#39;surabaya&#39;,
+ &#39;swarm&#39;,
+ &#39;syaraf&#39;,
+ &#39;system&#39;,
+ &#39;tahap&#39;,
+ &#39;tahapan&#39;,
+ &#39;tahun&#39;,
+ &#39;taman&#39;,
+ &#39;tampilan&#39;,
+ &#39;tanah&#39;,
+ &#39;tanaman&#39;,
+ &#39;tangan&#39;,
+ &#39;tanpa&#39;,
+ &#39;target&#39;,
+ &#39;technique&#39;,
+ &#39;teknik&#39;,
+ &#39;teknis&#39;,
+ &#39;teknologi&#39;,
+ &#39;teks&#39;,
+ &#39;tekstur&#39;,
+ &#39;telah&#39;,
+ &#39;telapak&#39;,
+ &#39;tempat&#39;,
+ &#39;tengah&#39;,
+ &#39;tentang&#39;,
+ &#39;tentukan&#39;,
+ &#39;tentunya&#39;,
+ &#39;tepat&#39;,
+ &#39;tepi&#39;,
+ &#39;terbaik&#39;,
+ &#39;terbaru&#39;,
+ &#39;terbentuk&#39;,
+ &#39;terbesar&#39;,
+ &#39;terdapat&#39;,
+ &#39;terdeteksi&#39;,
+ &#39;terdiri&#39;,
+ &#39;terdistribusi&#39;,
+ &#39;terendah&#39;,
+ &#39;terenkripsi&#39;,
+ &#39;terhadap&#39;,
+ &#39;terjadi&#39;,
+ &#39;terjadinya&#39;,
+ &#39;terkecil&#39;,
+ &#39;terlalu&#39;,
+ &#39;terlebih&#39;,
+ &#39;terpisah&#39;,
+ &#39;terpusat&#39;,
+ &#39;tersebut&#39;,
+ &#39;tersedia&#39;,
+ &#39;tersimpan&#39;,
+ &#39;tertentu&#39;,
+ &#39;tertinggi&#39;,
+ &#39;terus&#39;,
+ &#39;terutama&#39;,
+ &#39;tes&#39;,
+ &#39;test&#39;,
+ &#39;testing&#39;,
+ &#39;tetap&#39;,
+ &#39;tetapi&#39;,
+ &#39;threshold&#39;,
+ &#39;tiap&#39;,
+ &#39;tidak&#39;,
+ &#39;tiga&#39;,
+ &#39;time&#39;,
+ &#39;tindakan&#39;,
+ &#39;tinggi&#39;,
+ &#39;tingkat&#39;,
+ &#39;tinta&#39;,
+ &#39;tipe&#39;,
+ &#39;tiruan&#39;,
+ &#39;titik&#39;,
+ &#39;toefl&#39;,
+ &#39;togaf&#39;,
+ &#39;toko&#39;,
+ &#39;tool&#39;,
+ &#39;topsis&#39;,
+ &#39;traffic&#39;,
+ &#39;training&#39;,
+ &#39;transaksi&#39;,
+ &#39;transform&#39;,
+ &#39;transformasi&#39;,
+ &#39;trunojoyo&#39;,
+ &#39;tsai&#39;,
+ &#39;tubuh&#39;,
+ &#39;tugas&#39;,
+ &#39;tujuan&#39;,
+ &#39;tulis&#39;,
+ &#39;tulisan&#39;,
+ &#39;tunggal&#39;,
+ &#39;ujicoba&#39;,
+ &#39;umum&#39;,
+ &#39;umumnya&#39;,
+ &#39;unggulan&#39;,
+ &#39;unik&#39;,
+ &#39;universitas&#39;,
+ &#39;untuk&#39;,
+ &#39;upaya&#39;,
+ &#39;usaha&#39;,
+ &#39;user&#39;,
+ &#39;utama&#39;,
+ &#39;variasinya&#39;,
+ &#39;vector&#39;,
+ &#39;video&#39;,
+ &#39;virtual&#39;,
+ &#39;vision&#39;,
+ &#39;visualisasi&#39;,
+ &#39;wachid&#39;,
+ &#39;wajah&#39;,
+ &#39;waktu&#39;,
+ &#39;waterfall&#39;,
+ &#39;watershed&#39;,
+ &#39;wavelet&#39;,
+ &#39;website&#39;,
+ &#39;wilayah&#39;,
+ &#39;window&#39;,
+ &#39;winnowing&#39;,
+ &#39;yaitu&#39;,
+ &#39;yakni&#39;,
+ &#39;yang&#39;,
+ &#39;yogyakarta&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vect_text</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>matrix([[0.        , 0.06758881, 0.        , ..., 0.        , 0.10364702,
+         0.        ],
+        [0.        , 0.05567105, 0.        , ..., 0.        , 0.1707424 ,
+         0.        ],
+        [0.        , 0.07377258, 0.        , ..., 0.        , 0.16969468,
+         0.        ],
+        ...,
+        [0.        , 0.        , 0.        , ..., 0.        , 0.04222837,
+         0.        ],
+        [0.        , 0.02123406, 0.03708292, ..., 0.        , 0.04884344,
+         0.        ],
+        [0.        , 0.02092204, 0.03653803, ..., 0.        , 0.12833528,
+         0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">vect_text</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">vect</span><span class="o">.</span><span class="n">get_feature_names</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>10</th>
+      <th>...</th>
+      <th>51</th>
+      <th>52</th>
+      <th>53</th>
+      <th>54</th>
+      <th>55</th>
+      <th>56</th>
+      <th>57</th>
+      <th>58</th>
+      <th>59</th>
+      <th>60</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>abstrak</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.057065</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.054172</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>adalah</th>
+      <td>0.067589</td>
+      <td>0.055671</td>
+      <td>0.073773</td>
+      <td>0.048564</td>
+      <td>0.021256</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.014967</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.051856</td>
+      <td>0.000000</td>
+      <td>0.020178</td>
+      <td>0.036473</td>
+      <td>0.000000</td>
+      <td>0.034302</td>
+      <td>0.023376</td>
+      <td>0.000000</td>
+      <td>0.021234</td>
+      <td>0.020922</td>
+    </tr>
+    <tr>
+      <th>adanya</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.078346</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.037083</td>
+      <td>0.036538</td>
+    </tr>
+    <tr>
+      <th>administrator</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>agar</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.103058</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>akademik</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>akan</th>
+      <td>0.025911</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.083780</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.034426</td>
+      <td>0.025797</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.029819</td>
+      <td>0.059037</td>
+      <td>0.023207</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.039450</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.048842</td>
+      <td>0.024062</td>
+    </tr>
+    <tr>
+      <th>akhir</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.044736</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.051588</td>
+      <td>0.027574</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.037175</td>
+      <td>0.067196</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>aksara</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>akurasi</th>
+      <td>0.039345</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.037121</td>
+      <td>0.000000</td>
+      <td>0.048901</td>
+      <td>0.026138</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.029952</td>
+      <td>0.040823</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.036538</td>
+    </tr>
+    <tr>
+      <th>akurat</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.057065</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>algoritma</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.059657</td>
+      <td>0.140702</td>
+      <td>0.000000</td>
+      <td>0.241161</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>alternatif</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.074076</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>analisa</th>
+      <td>0.000000</td>
+      <td>0.070839</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.054094</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>analisis</th>
+      <td>0.000000</td>
+      <td>0.149461</td>
+      <td>0.066019</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>analysis</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.046720</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>analytic</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.061796</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.114169</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>android</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>angular</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>animasi</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>antar</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.288124</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>antara</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.053957</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>apabila</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.068907</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.069638</td>
+      <td>0.000000</td>
+      <td>0.062757</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>aplikasi</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.162482</td>
+      <td>0.065137</td>
+      <td>0.000000</td>
+      <td>0.026841</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.087816</td>
+      <td>0.105821</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.026632</td>
+      <td>0.123216</td>
+      <td>0.060703</td>
+    </tr>
+    <tr>
+      <th>arah</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.046045</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>arosbaya</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.230219</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>arsitektur</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.653242</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>asesoris</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>aspek</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.044901</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.051529</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>atas</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>umum</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.070227</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.074076</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>umumnya</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.042742</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>unggulan</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.151302</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>unik</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.052428</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>universitas</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.069638</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>untuk</th>
+      <td>0.053551</td>
+      <td>0.066163</td>
+      <td>0.038967</td>
+      <td>0.057717</td>
+      <td>0.067364</td>
+      <td>0.109013</td>
+      <td>0.088742</td>
+      <td>0.059292</td>
+      <td>0.017772</td>
+      <td>0.073298</td>
+      <td>...</td>
+      <td>0.082172</td>
+      <td>0.020336</td>
+      <td>0.047962</td>
+      <td>0.072244</td>
+      <td>0.020551</td>
+      <td>0.095121</td>
+      <td>0.037041</td>
+      <td>0.014545</td>
+      <td>0.033648</td>
+      <td>0.033153</td>
+    </tr>
+    <tr>
+      <th>upaya</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>usaha</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.105525</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>user</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>utama</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.046410</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.054039</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>variasinya</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>vector</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.174283</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>video</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.172284</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>virtual</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.364557</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>vision</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>visualisasi</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wachid</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.215996</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wajah</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>waktu</th>
+      <td>0.000000</td>
+      <td>0.062185</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.115895</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>waterfall</th>
+      <td>0.069310</td>
+      <td>0.000000</td>
+      <td>0.075651</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>watershed</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wavelet</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>website</th>
+      <td>0.415859</td>
+      <td>0.000000</td>
+      <td>0.151302</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>wilayah</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.052840</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>window</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.136698</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>winnowing</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.136698</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>yaitu</th>
+      <td>0.064012</td>
+      <td>0.000000</td>
+      <td>0.069868</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.119336</td>
+      <td>0.063786</td>
+      <td>0.127461</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.073667</td>
+      <td>0.000000</td>
+      <td>0.114661</td>
+      <td>0.051814</td>
+      <td>0.036849</td>
+      <td>0.000000</td>
+      <td>0.066415</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>yakni</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>yang</th>
+      <td>0.103647</td>
+      <td>0.170742</td>
+      <td>0.169695</td>
+      <td>0.055855</td>
+      <td>0.097786</td>
+      <td>0.123079</td>
+      <td>0.107348</td>
+      <td>0.022952</td>
+      <td>0.120391</td>
+      <td>0.113494</td>
+      <td>...</td>
+      <td>0.079521</td>
+      <td>0.098398</td>
+      <td>0.092829</td>
+      <td>0.083896</td>
+      <td>0.139218</td>
+      <td>0.118353</td>
+      <td>0.161308</td>
+      <td>0.042228</td>
+      <td>0.048843</td>
+      <td>0.128335</td>
+    </tr>
+    <tr>
+      <th>yogyakarta</th>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>1000 rows × 60 columns</p>
+</div></div></div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="lsa">
+<h1>LSA<a class="headerlink" href="#lsa" title="Permalink to this headline">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">idf</span><span class="o">=</span><span class="n">vect</span><span class="o">.</span><span class="n">idf_</span>
@@ -989,7 +4009,7 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yang wajah
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>yang yakni
 1.0
 4.417726683613366
 </pre></div>
@@ -1006,6 +4026,7 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 </div>
 </div>
+<p>Mirip dengan dokumen lain kita bisa melakukan ini. Namun perhatikan bahwa nilai tidak menambah 1 seperti di LSA itu bukan kemungkinan topik dalam dokumen.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lsa_top</span><span class="p">)</span>
@@ -1014,191 +4035,243 @@ Preprocessing data adalah tahapan perbersihan data dari suatu kalimat atau kata,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2.94621783e-01  1.14284142e-02 -7.93177351e-02  1.43787806e-01
-  -1.69167977e-01 -1.33479482e-01  7.54971602e-04 -8.47349114e-02
-   5.56171720e-01  3.00287419e-01]
- [ 3.12924002e-01 -1.13953528e-01 -1.16543532e-01 -7.31609178e-02
-  -5.87801002e-02 -1.37875420e-01 -1.60644013e-01  8.15194883e-02
-   2.82950028e-02  1.44308558e-01]
- [ 3.15876446e-01  3.92275463e-02 -7.29732514e-02  2.12513524e-01
-  -1.91671745e-01 -1.75683185e-01  2.46247292e-02 -6.66666155e-02
-   5.10893907e-01  3.61791671e-01]
- [ 2.36507649e-01 -9.40772468e-02 -1.60423693e-01 -2.25230320e-02
-  -7.09792431e-02 -6.12045093e-02  1.71505553e-01 -8.79197555e-02
-   1.09858280e-01 -9.60265005e-02]
- [ 3.08898547e-01 -1.18551942e-02 -2.50981218e-02 -6.10313660e-02
-   7.77796435e-02  7.27812159e-02 -1.91285545e-01  9.48380084e-02
-   1.04618613e-01  6.25058256e-02]
- [ 3.28663305e-01 -1.82776721e-01 -3.17252494e-01 -1.33209602e-01
-  -9.90653639e-02 -1.62090349e-01  3.36326668e-01 -1.61637384e-01
-  -1.31629912e-01 -1.64335883e-01]
- [ 4.27946262e-01  2.94704485e-01  4.76146449e-02  5.75123807e-02
-  -7.23999708e-02  1.14502435e-01 -3.12596920e-02  3.36423399e-02
-  -1.62491374e-01 -9.26847859e-03]
- [ 2.06619830e-01 -5.24109120e-02 -5.88223646e-02 -7.10187268e-03
-   5.71847397e-02  5.17456901e-01 -9.63139363e-02 -1.74683061e-01
-  -1.42302449e-01  2.81655768e-01]
- [ 3.08734951e-01 -1.15983542e-01 -2.35216315e-01 -5.05485072e-02
-  -1.32531048e-01 -3.00206147e-01  5.69504751e-02 -4.29787434e-02
-  -1.88467495e-01  1.74017496e-02]
- [ 3.62529482e-01  3.17590689e-01  3.17237202e-02  1.64151162e-01
-  -2.10384423e-01  5.24427569e-02 -3.28020126e-02  2.51434967e-02
-  -2.77162466e-01 -1.06143897e-01]
- [ 2.74195225e-01 -1.89552214e-01  2.86643072e-01  2.11523319e-02
-  -1.65370491e-02  8.22133216e-03  7.09409754e-02  4.75416388e-02
-  -2.62065919e-02 -4.37803629e-03]
- [ 1.91105901e-01 -1.62325866e-01  4.13012067e-01 -6.46133189e-02
-  -1.25745757e-01 -9.25824009e-02 -6.07335081e-02 -3.24186860e-01
-   1.51866531e-02  3.30553323e-02]
- [ 2.09767906e-01 -1.76406690e-01  4.47329622e-01 -8.31612423e-02
-  -1.23838929e-01 -6.62368400e-02 -1.13424101e-01 -1.54445671e-01
-   4.54334654e-02 -1.28908656e-01]
- [ 2.12227628e-01 -1.38439203e-01  2.77658498e-01 -9.28074801e-02
-  -7.91135886e-02 -6.52444166e-02 -2.02008346e-02 -2.39734848e-01
-  -6.35375881e-02  1.08807097e-02]
- [ 3.16021362e-01 -8.31995711e-02 -2.46444803e-02  6.42020006e-02
-   7.86586170e-02  8.87098797e-02 -7.63012868e-02  5.47050781e-02
-  -6.24771337e-05 -1.23171345e-01]
- [ 3.04239050e-01 -1.07945818e-02  1.38282194e-02 -5.49903161e-02
-  -4.50085975e-03  1.68598553e-02 -1.06371158e-02  9.10409227e-02
-  -5.35574620e-03 -7.78167312e-02]
- [ 1.69149113e-01 -9.67361099e-02  2.90908488e-02 -3.15436817e-02
-   6.79844247e-03 -2.51542083e-02 -1.30106075e-01  8.18939486e-02
-  -8.94399874e-02 -1.77649655e-03]
- [ 3.22902618e-01  2.10449474e-01 -2.31153938e-03  6.18048882e-02
-  -1.11612762e-01  3.85755064e-02 -3.89575114e-02  1.94313671e-02
-  -1.03548067e-01 -1.66170036e-01]
- [ 2.12727258e-01 -7.58232864e-02  5.37444527e-02  4.84466563e-03
-   1.02877897e-02  6.73153392e-02 -4.99368344e-02  2.32642362e-01
-   3.88717793e-02 -2.21160017e-01]
- [ 3.42661413e-01 -1.44100625e-01  4.11335684e-02 -6.29213664e-02
-  -5.85047411e-02  9.24512976e-02 -1.38890774e-01  2.68355501e-01
-   1.95725908e-01 -2.58100125e-01]
- [ 2.35753805e-01 -1.17652694e-01  1.87464353e-01  4.00532420e-02
-  -1.17182859e-02  1.89878029e-02  3.73353156e-01  3.55334569e-01
-  -1.08959290e-01  2.52556250e-01]
- [ 3.05561260e-01  1.66945623e-01  3.48331279e-02 -1.25915341e-01
-   1.44002399e-01  1.76407886e-02 -2.61474418e-02  1.24613094e-02
-  -1.59548285e-02 -2.63429860e-02]
- [ 3.87959441e-01 -8.66903428e-02  6.39789907e-02  9.21737593e-02
-   8.19849910e-02  5.29339108e-02 -5.37744514e-02  9.40761976e-02
-   8.61201540e-02 -3.55841638e-02]
- [ 3.31357511e-01 -1.49976051e-01 -2.04910791e-01 -1.47425906e-01
-  -2.70989910e-02 -1.38222243e-01 -2.15015436e-01  1.93099669e-02
-  -1.73971977e-01  1.83562214e-01]
- [ 3.24399774e-01 -1.20393825e-01 -1.71787497e-01 -1.85304135e-01
-  -2.71379939e-02 -1.99183945e-01 -2.71655405e-01  1.05045274e-01
-  -1.63410051e-01  2.18997468e-01]
- [ 2.31289034e-01 -7.25425220e-02 -4.82006864e-02  9.35634481e-02
-   8.25867479e-02  5.44332139e-02 -1.45098869e-02 -3.91395323e-02
-   5.16122112e-02 -9.53752602e-02]
- [ 3.39407041e-01 -1.24407375e-01 -4.51961762e-02  3.88778475e-03
-   8.44040867e-02  1.87829590e-01 -3.12272417e-02  1.90374636e-02
-   6.21938870e-02 -2.32061879e-02]
- [ 3.06626790e-01 -1.38557386e-01 -9.32135687e-02 -9.60307008e-02
-   3.94019734e-02 -8.49332502e-03 -2.73249751e-01  6.08465346e-02
-  -4.30785487e-02  1.59177116e-01]
- [ 2.78001567e-01 -2.22017818e-01  4.95930659e-01 -7.92760695e-02
-  -1.25862677e-01 -9.36255937e-02  2.10357614e-02 -2.81173246e-01
-  -7.38827731e-02  1.46407117e-02]
- [ 2.49036363e-01  2.36911152e-01  3.63225635e-02 -4.82275267e-02
-   9.56369235e-02  2.69481534e-02  5.46170893e-02  4.68100139e-03
-  -1.47698800e-01 -5.03690028e-02]
- [ 4.77265191e-01  4.46569307e-01  4.42621410e-03  2.92425090e-01
-  -2.50842834e-01 -5.14436884e-02 -4.68434251e-03 -7.48690379e-02
-   7.57120932e-02  1.18011493e-01]
- [ 3.87227047e-01 -2.10885587e-01 -2.00740195e-01  1.06113856e-02
-  -5.42217705e-02  2.64458803e-02  2.54569743e-01 -1.88595012e-01
-   1.16784793e-01 -8.17217591e-02]
- [ 3.22522985e-01 -1.89584302e-01 -2.45085333e-01 -1.05041676e-01
-  -1.24392817e-01 -3.02432363e-01 -1.22974335e-01  3.41789658e-02
-  -2.70553424e-01  1.66302531e-01]
- [ 3.69560463e-01  3.06001363e-01  5.39063730e-02 -7.94663913e-02
-   8.38055459e-02  5.80082110e-03 -4.26586818e-02  2.65794060e-03
-   8.33403802e-02 -1.12265129e-02]
- [ 4.16253571e-01  3.99608365e-01  8.45872608e-02 -3.53065309e-01
-   4.17398617e-01 -1.16844109e-01  8.36731230e-02 -6.65411528e-02
-   8.48995266e-02  2.18778260e-02]
- [ 3.58975298e-01 -1.63787652e-02  1.90722824e-02 -8.42578197e-02
-   3.31216942e-02  8.03172587e-02 -6.74173095e-02  9.92403382e-02
-   3.85270502e-02 -1.15766950e-01]
- [ 2.94054348e-01 -1.47427891e-01  1.12533799e-01  8.19100559e-02
-   9.04816388e-02  2.25623752e-02  4.91313964e-02  1.25051697e-01
-  -3.14337451e-02 -4.21953517e-02]
- [ 2.85413016e-01 -8.83665835e-02 -8.64933266e-02 -9.33302796e-02
-   4.20191527e-02  6.20446246e-02 -2.07168476e-01  7.76493766e-02
-   6.70873112e-02  8.89454709e-02]
- [ 1.95464581e-01 -7.28084880e-02 -2.45257844e-02  1.80708281e-01
-   1.41741488e-01  1.15425379e-02 -2.37326580e-02 -5.83350296e-02
-  -1.99476072e-03 -4.52078784e-02]
- [ 5.23078148e-01  5.27345483e-01  1.11532744e-02  2.84352222e-01
-  -2.64645719e-01 -1.48384694e-02 -2.70164926e-02 -5.03680911e-02
-  -1.18129549e-02  4.87513635e-02]
- [ 2.64143993e-01 -2.02524180e-01  1.77401244e-02  6.00092243e-01
-   5.17005135e-01 -1.89162543e-01 -5.13595602e-02 -9.13706854e-02
-  -6.52679393e-02 -2.81275503e-02]
- [ 3.68081643e-01 -1.49244395e-01 -3.00616064e-01 -8.43638482e-02
-  -8.45001323e-02 -1.05800652e-01  3.54837384e-01 -1.48137599e-01
-  -2.66088939e-02 -2.45592458e-01]
- [ 2.29157054e-01 -1.62372235e-01 -1.17410221e-01 -4.70542706e-03
-   5.44871120e-02  4.04121807e-01  8.49536157e-02 -1.93539260e-01
-  -1.39568395e-02  1.14613959e-01]
- [ 2.32441390e-01 -1.22078192e-01  2.63938588e-01  4.23154973e-02
-  -1.97394029e-02  1.36228268e-02  4.87419986e-01  4.47948007e-01
-  -1.16807873e-01  3.10895262e-01]
- [ 2.84569984e-01 -7.72602273e-02 -7.06765393e-02 -6.72696196e-03
-   3.77920093e-02  1.01898384e-01  5.58460858e-02 -1.94573671e-02
-   1.09199747e-01 -2.92258428e-02]
- [ 2.84908353e-01 -1.19233316e-01 -5.10572512e-02 -3.52227063e-02
-   5.36039382e-02 -5.05773990e-02 -5.45925408e-02  1.21324547e-01
-  -5.14966662e-02 -1.30409615e-01]
- [ 4.27492831e-01  3.96329391e-01  3.15498946e-02  1.88772170e-01
-  -2.50688392e-01  5.06168314e-02  1.24871340e-02 -1.76863123e-02
-  -2.39177123e-01 -1.51638909e-01]
- [ 2.91330573e-01  3.11270757e-02  2.52859920e-03 -5.20057157e-02
-  -5.16910349e-04  8.57085756e-02 -7.59393092e-04  5.55740171e-02
-  -1.33050710e-01 -1.07555601e-01]
- [ 2.96561418e-01 -1.27034166e-01 -1.59910727e-01 -4.47533612e-02
-  -1.82937092e-02  9.84905407e-02  1.96181516e-01 -8.39100710e-02
-   1.62707134e-01 -2.01746556e-01]
- [ 2.82542936e-01 -2.21561065e-01  4.99171636e-01 -1.06810558e-01
-  -1.28727619e-01 -1.05370976e-01 -8.48078041e-02 -2.66133199e-01
-  -4.49391570e-02 -3.01895309e-02]
- [ 2.98743463e-01 -9.95815664e-02 -1.76403576e-01 -4.97346578e-02
-  -3.05501442e-02 -2.00507927e-01  3.71121033e-02 -2.01861521e-02
-  -1.53397085e-01 -7.53796614e-03]
- [ 2.53060974e-01 -7.27431392e-02 -9.03814422e-02 -8.51409129e-02
-   3.26908061e-02 -1.03369785e-01 -2.56108596e-01  7.52080475e-02
-  -3.04855231e-02  1.35000731e-01]
- [ 3.01178252e-01 -6.81018539e-02  7.56774406e-02 -9.67337150e-03
-  -5.42541949e-02  8.47597296e-02 -1.57291643e-01  2.54835256e-01
-   1.23751001e-01 -1.84680506e-01]
- [ 2.33886118e-01 -1.40800860e-01  2.27033463e-01  2.54544873e-02
-  -4.48763104e-02  4.56977652e-02  2.90069905e-01  3.36463209e-01
-  -3.61095618e-02  1.98010624e-01]
- [ 3.10694930e-01 -1.38847530e-01  4.37071887e-02 -6.90970700e-02
-  -8.06961245e-02  1.30839864e-01 -1.91161306e-01  2.51612524e-01
-   2.99845918e-01 -2.81382092e-01]
- [ 3.69727622e-01  4.01019871e-01  8.09890299e-02 -3.91607673e-01
-   4.68897350e-01 -1.17085069e-01  1.29905760e-01 -9.10446230e-02
-   1.17166844e-01  5.82217126e-02]
- [ 3.35870701e-01 -1.36571582e-01 -1.55102160e-01 -1.82984299e-02
-  -2.86832870e-02  1.72877319e-01  1.84895625e-01 -1.54482987e-01
-   1.54645637e-01 -7.39264869e-02]
- [ 2.03018261e-01  2.26867552e-01  7.88259825e-02 -2.97149978e-01
-   3.72656205e-01 -9.05942451e-02  1.16811192e-01 -3.69112503e-02
-   7.09233394e-02  6.70140046e-02]
- [ 2.44245394e-01 -1.79759191e-01  3.37879119e-02  6.08978977e-01
-   5.30198941e-01 -1.66714422e-01 -5.29488360e-02 -8.47273749e-02
-  -1.00664340e-01 -3.95458842e-02]
- [ 2.89591852e-01 -1.29533018e-01 -1.13819561e-01 -3.66421539e-02
-   5.90078468e-02  6.18471878e-01 -3.14672875e-02 -2.44915387e-01
-  -1.64380730e-01  2.83849336e-01]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2.93195838e-01  8.84092663e-03 -7.29179826e-02  1.17069965e-01
+  -1.82658458e-01 -1.27523179e-01  6.95203298e-03 -6.76797920e-02
+   5.45971227e-01  3.26196439e-01]
+ [ 3.09718936e-01 -1.09188837e-01 -1.21164223e-01 -7.92800026e-02
+  -4.77492000e-02 -1.33590242e-01 -1.71695954e-01  6.16832422e-02
+   2.02455937e-02  1.48559808e-01]
+ [ 3.09949519e-01  3.45333071e-02 -6.60300064e-02  1.81240382e-01
+  -2.13925599e-01 -1.69529686e-01  2.58997481e-02 -4.99152471e-02
+   4.96338996e-01  3.88072282e-01]
+ [ 2.36747052e-01 -9.31356148e-02 -1.58854453e-01 -3.41768951e-02
+  -6.77645987e-02 -6.44810224e-02  1.80568087e-01 -5.87888563e-02
+   1.21543379e-01 -8.76352309e-02]
+ [ 3.07250362e-01 -4.57196483e-03 -3.21421884e-02 -4.57229524e-02
+   8.57808548e-02  7.64106420e-02 -2.01402854e-01  7.27788648e-02
+   9.79355037e-02  6.22085321e-02]
+ [ 3.32873084e-01 -1.81743978e-01 -3.18149874e-01 -1.52646221e-01
+  -8.36461241e-02 -1.67994603e-01  3.56989484e-01 -1.16549164e-01
+  -1.18607950e-01 -1.60162550e-01]
+ [ 4.22244094e-01  2.90932163e-01  4.75911072e-02  5.29102580e-02
+  -8.71597807e-02  1.12842461e-01 -3.34499365e-02  2.40586625e-02
+  -1.63338831e-01 -1.57428788e-02]
+ [ 2.08817594e-01 -5.32488896e-02 -6.22302648e-02  3.52406932e-03
+   5.70935260e-02  5.25736497e-01 -6.90986639e-02 -1.86147319e-01
+  -1.53433674e-01  2.64569481e-01]
+ [ 3.07521267e-01 -1.14782628e-01 -2.32991615e-01 -7.27074467e-02
+  -1.25986178e-01 -3.00087816e-01  6.38662564e-02 -4.59922145e-02
+  -1.89804244e-01  1.66851615e-02]
+ [ 3.55972891e-01  3.09887134e-01  3.10289445e-02  1.42897641e-01
+  -2.35885134e-01  4.85829754e-02 -3.23916613e-02  1.15437701e-02
+  -2.67966935e-01 -1.17348962e-01]
+ [ 2.75901647e-01 -1.92331238e-01  2.84729020e-01  1.80423758e-02
+  -1.36376133e-02  1.11823792e-02  6.46237939e-02  6.37297606e-02
+  -2.36257862e-02 -3.38380810e-03]
+ [ 1.92009153e-01 -1.66163813e-01  4.18376561e-01 -8.10192809e-02
+  -1.12518781e-01 -8.67829894e-02 -1.01200590e-02 -3.23068294e-01
+   2.03151059e-02  3.96818164e-02]
+ [ 2.10168726e-01 -1.80515576e-01  4.53684045e-01 -9.90445105e-02
+  -1.08537181e-01 -6.31024640e-02 -8.55376023e-02 -1.63761863e-01
+   5.01897846e-02 -1.24296553e-01]
+ [ 2.13157110e-01 -1.39969146e-01  2.80339593e-01 -1.01925487e-01
+  -6.31700823e-02 -6.09842044e-02  1.45845877e-02 -2.33356629e-01
+  -5.61383343e-02  1.12409763e-02]
+ [ 3.11396341e-01 -8.27540269e-02 -2.62059164e-02  7.72105301e-02
+   6.72240818e-02  7.86274952e-02 -7.99041549e-02  4.29546479e-02
+   1.22839206e-02 -1.19333844e-01]
+ [ 3.05367954e-01 -6.77458516e-03  1.15016890e-02 -5.41799598e-02
+  -4.17941712e-04  1.24219868e-02 -2.67574563e-02  9.00220968e-02
+  -4.28653268e-03 -8.07560110e-02]
+ [ 1.68554996e-01 -9.56095207e-02  2.72762414e-02 -3.10939567e-02
+   1.14941606e-02 -2.79183980e-02 -1.41896405e-01  6.01237132e-02
+  -9.60407513e-02 -2.51918967e-03]
+ [ 3.19912136e-01  2.05292845e-01 -3.38875228e-03  5.34577697e-02
+  -1.22946175e-01  3.71409377e-02 -3.73854614e-02  8.09141319e-03
+  -9.62799300e-02 -1.74654076e-01]
+ [ 2.11598718e-01 -7.43200160e-02  4.88713387e-02  4.59728687e-03
+   1.09042101e-02  6.16127098e-02 -8.37055059e-02  2.18030116e-01
+   3.47320516e-02 -2.21290010e-01]
+ [ 3.43052305e-01 -1.42547697e-01  3.81993078e-02 -6.88604963e-02
+  -4.85603584e-02  8.69436386e-02 -1.81804487e-01  2.51221709e-01
+   1.99481857e-01 -2.53697112e-01]
+ [ 2.35284092e-01 -1.17450605e-01  1.77502196e-01  3.58579248e-02
+  -1.29924653e-02  2.26715220e-02  3.12314427e-01  4.09430979e-01
+  -1.30632078e-01  2.48042309e-01]
+ [ 3.06918475e-01  1.70853874e-01  3.54897432e-02 -1.01403264e-01
+   1.52874987e-01  1.98375195e-02 -2.93387723e-02  9.26700227e-03
+  -1.60090714e-02 -3.10053401e-02]
+ [ 3.88330189e-01 -8.64159448e-02  6.57577067e-02  1.03568832e-01
+   6.88740265e-02  4.63675014e-02 -6.86195279e-02  8.62764107e-02
+   8.51257239e-02 -3.13019909e-02]
+ [ 3.26377335e-01 -1.42632774e-01 -2.00254811e-01 -1.50872039e-01
+  -5.37073169e-03 -1.35768969e-01 -2.19169684e-01 -2.19219708e-02
+  -1.73761032e-01  1.75677136e-01]
+ [ 3.24034410e-01 -1.15052424e-01 -1.69212910e-01 -1.88277949e-01
+  -2.84907851e-03 -1.95975112e-01 -2.88859236e-01  5.36473819e-02
+  -1.72792621e-01  2.11374487e-01]
+ [ 2.50880010e-01 -7.41553388e-02 -4.79764611e-02  1.18125876e-01
+   7.57442921e-02  5.62735739e-02 -6.52861328e-03 -4.52980825e-02
+   5.26234563e-02 -1.02546260e-01]
+ [ 3.40160437e-01 -1.23544721e-01 -4.68642100e-02  1.69586237e-02
+   8.40860383e-02  1.87079957e-01 -3.46934855e-02  1.69231865e-02
+   6.37840148e-02 -2.45426141e-02]
+ [ 3.03022154e-01 -1.33109213e-01 -9.15462914e-02 -8.85857714e-02
+   5.25868708e-02 -5.08282434e-03 -2.80434689e-01  1.62237896e-02
+  -5.09701098e-02  1.52307170e-01]
+ [ 2.83717245e-01 -2.27896580e-01  5.01799087e-01 -9.53787303e-02
+  -1.10540417e-01 -8.94568959e-02  6.24100817e-02 -2.68323813e-01
+  -6.47008582e-02  1.88242735e-02]
+ [ 2.50549795e-01  2.39936404e-01  3.62259302e-02 -3.18109729e-02
+   9.57564637e-02  2.50229883e-02  5.55388140e-02  9.13535425e-03
+  -1.44751105e-01 -5.67354604e-02]
+ [ 4.69668222e-01  4.38875990e-01  1.03390160e-02  2.62006468e-01
+  -2.93309827e-01 -5.09710863e-02  5.48191220e-03 -7.23813602e-02
+   7.15447523e-02  1.27517519e-01]
+ [ 3.87500224e-01 -2.11705972e-01 -2.00915307e-01 -2.46956941e-03
+  -5.34762556e-02  2.31691810e-02  2.78590288e-01 -1.42674043e-01
+   1.29345914e-01 -7.51950927e-02]
+ [ 3.21985896e-01 -1.86235414e-01 -2.43533393e-01 -1.24511107e-01
+  -1.08677219e-01 -3.01355501e-01 -1.30886889e-01  7.71486876e-04
+  -2.76217569e-01  1.60937799e-01]
+ [ 3.70411561e-01  3.10584565e-01  5.63565248e-02 -6.34175351e-02
+   8.82592483e-02  9.96547254e-03 -4.19103847e-02 -1.89637922e-03
+   8.15074393e-02 -1.11859952e-02]
+ [ 4.23929302e-01  4.14326797e-01  8.67277497e-02 -2.94289250e-01
+   4.54331547e-01 -1.11444786e-01  9.01598489e-02 -5.30608178e-02
+   8.10093917e-02  2.71228715e-02]
+ [ 3.78328710e-01 -1.37165085e-02  1.78945278e-02 -8.14298390e-02
+   4.26619238e-02  8.06030869e-02 -8.54841382e-02  9.15772573e-02
+   3.89359562e-02 -1.21140941e-01]
+ [ 2.95470501e-01 -1.46659527e-01  1.04671481e-01  9.51901557e-02
+   8.17880269e-02  1.99529227e-02  2.84712339e-02  1.34850390e-01
+  -2.63931096e-02 -4.40966315e-02]
+ [ 2.82981810e-01 -8.43094871e-02 -8.83071042e-02 -8.52228699e-02
+   5.36349524e-02  6.13605030e-02 -2.18590380e-01  4.44976173e-02
+   5.92192620e-02  9.03810081e-02]
+ [ 1.97110786e-01 -7.34329535e-02 -2.69782290e-02  2.00531005e-01
+   1.18129244e-01  6.97621185e-03 -9.47416617e-03 -6.60293082e-02
+  -1.32808343e-04 -4.63561958e-02]
+ [ 5.14031623e-01  5.17685041e-01  1.57806055e-02  2.53531574e-01
+  -3.07489340e-01 -1.49904239e-02 -1.73665419e-02 -5.43495810e-02
+  -1.46137238e-02  5.08565578e-02]
+ [ 2.64348191e-01 -2.02376649e-01  1.34721400e-02  6.56591934e-01
+   4.37601097e-01 -1.94216434e-01 -3.18214988e-02 -1.00564595e-01
+  -6.18950289e-02 -2.74899173e-02]
+ [ 3.69081145e-01 -1.47468205e-01 -3.00604073e-01 -1.00869699e-01
+  -7.59379561e-02 -1.13958618e-01  3.72873489e-01 -9.60554023e-02
+  -8.76718049e-03 -2.38736074e-01]
+ [ 2.32431095e-01 -1.64097530e-01 -1.20788697e-01  1.89175548e-03
+   5.48595290e-02  4.07749019e-01  1.14008283e-01 -1.76708254e-01
+  -1.32623976e-02  1.10882676e-01]
+ [ 2.30485271e-01 -1.21198115e-01  2.52005532e-01  3.68264951e-02
+  -2.06393003e-02  1.33852480e-02  4.09516186e-01  5.21650487e-01
+  -1.41501468e-01  3.04942909e-01]
+ [ 2.85333700e-01 -7.53605205e-02 -7.16469787e-02 -2.16879727e-03
+   3.71838153e-02  9.98091880e-02  5.67153662e-02 -5.55620739e-03
+   1.13577440e-01 -2.71103366e-02]
+ [ 2.85750501e-01 -1.18696010e-01 -5.35854902e-02 -3.30405370e-02
+   5.92430637e-02 -5.13117041e-02 -7.42849820e-02  1.08580291e-01
+  -5.55324859e-02 -1.30067547e-01]
+ [ 4.24313541e-01  3.88387055e-01  3.27246283e-02  1.61531876e-01
+  -2.81751984e-01  4.68372636e-02  2.00202428e-02 -2.15367640e-02
+  -2.27210357e-01 -1.61169232e-01]
+ [ 2.92910105e-01  3.17536112e-02  1.79316947e-03 -5.06417873e-02
+   2.21319515e-03  8.16058919e-02 -8.31056740e-03  5.26259923e-02
+  -1.29064266e-01 -1.12867175e-01]
+ [ 2.94408451e-01 -1.22477564e-01 -1.58704043e-01 -4.91312973e-02
+  -1.68826613e-02  9.00467501e-02  2.05646671e-01 -4.71650024e-02
+   1.75629775e-01 -1.90912149e-01]
+ [ 2.83435107e-01 -2.25599881e-01  5.08816972e-01 -1.22500120e-01
+  -1.09962937e-01 -9.87276416e-02 -3.62039147e-02 -2.71495383e-01
+  -4.20427590e-02 -3.20634615e-02]
+ [ 2.95680226e-01 -9.58287485e-02 -1.74954132e-01 -6.02269457e-02
+  -2.80069977e-02 -2.01136811e-01  4.12075158e-02 -2.20091577e-02
+  -1.58790223e-01 -1.27166560e-02]
+ [ 2.52825683e-01 -6.89893258e-02 -9.35845964e-02 -7.91303176e-02
+   4.36003450e-02 -1.04383443e-01 -2.68067876e-01  3.24591790e-02
+  -4.15873890e-02  1.37327118e-01]
+ [ 2.96058000e-01 -6.75735233e-02  7.11238522e-02 -1.69583988e-02
+  -4.97878643e-02  8.04141257e-02 -1.92211437e-01  2.27961330e-01
+   1.17676864e-01 -1.82646886e-01]
+ [ 2.32575241e-01 -1.39687056e-01  2.16617361e-01  1.85092536e-02
+  -4.34441741e-02  4.43100782e-02  2.32295228e-01  3.82607872e-01
+  -5.36311640e-02  1.95460030e-01]
+ [ 3.10762090e-01 -1.37421033e-01  4.12044948e-02 -7.75905732e-02
+  -6.94828658e-02  1.24992658e-01 -2.30908341e-01  2.29484470e-01
+   3.04210079e-01 -2.72450575e-01]
+ [ 3.71749768e-01  4.14762039e-01  8.37696676e-02 -3.25577066e-01
+   5.10474329e-01 -1.09973896e-01  1.40101603e-01 -6.95370666e-02
+   1.14239373e-01  6.42975993e-02]
+ [ 3.37707091e-01 -1.36318235e-01 -1.57379403e-01 -2.21133082e-02
+  -2.72442678e-02  1.68240113e-01  2.06737312e-01 -1.22047887e-01
+   1.63536711e-01 -6.86561241e-02]
+ [ 2.04080971e-01  2.35634375e-01  7.96328717e-02 -2.45689200e-01
+   4.04651388e-01 -8.43783740e-02  1.18625660e-01 -1.79835975e-02
+   6.61664542e-02  7.04197085e-02]
+ [ 2.44831431e-01 -1.80059075e-01  2.80276237e-02  6.67554943e-01
+   4.49000107e-01 -1.72907027e-01 -3.35546961e-02 -9.48016045e-02
+  -9.78347209e-02 -4.01977441e-02]
+ [ 2.92717415e-01 -1.31334771e-01 -1.16940837e-01 -2.62236544e-02
+   6.21502049e-02  6.26730661e-01  8.13650564e-03 -2.45332524e-01
+  -1.72832186e-01  2.69012341e-01]]
 (60, 10)
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="n">lsa_top</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Document 0 :&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">topic</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Topic &quot;</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="s2">&quot; : &quot;</span><span class="p">,</span><span class="n">topic</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Document 0 :
+Topic  0  :  29.319583787158866
+Topic  1  :  0.8840926628748778
+Topic  2  :  -7.291798255600251
+Topic  3  :  11.706996457454508
+Topic  4  :  -18.265845810754445
+Topic  5  :  -12.752317934641852
+Topic  6  :  0.6952032977929073
+Topic  7  :  -6.767979198740753
+Topic  8  :  54.59712272352628
+Topic  9  :  32.61964393497524
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">lsa_model</span><span class="o">.</span><span class="n">components_</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># (no_of_topics*no_of_words)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lsa_model</span><span class="o">.</span><span class="n">components_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(10, 1000)
+[[ 1.29193139e-02  9.32641786e-02  4.29301048e-02 ...  2.98707406e-03
+   3.78743847e-01  1.12498403e-02]
+ [-7.54606722e-03 -2.85748615e-02 -2.45386036e-02 ... -4.37847788e-03
+  -8.93893479e-02  2.80826261e-02]
+ [ 1.09778106e-02  2.06694806e-02  6.29381658e-03 ...  1.49348024e-03
+  -3.74529931e-02  8.96205721e-04]
+ ...
+ [ 3.51803765e-02  2.41140910e-02  2.40699528e-02 ...  4.26242623e-03
+   5.95864199e-02 -5.84555018e-03]
+ [ 7.52963909e-03  5.17529132e-02 -3.12128680e-02 ... -6.84498590e-03
+   5.71438094e-02  3.52410458e-03]
+ [ 5.99312487e-03  4.31766775e-02 -5.68801061e-03 ... -1.38439683e-04
+  -4.05730679e-02  9.30229787e-03]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Sekarang bisa mendapatkan daftar kata-kata penting dari masing-masing untuk 10 topik seperti yang ditunjukkan. Untuk kesederhanaan di sini saya telah menunjukkan 10 kata untuk setiap topik</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># most important words for each topic</span>
@@ -1222,28 +4295,28 @@ Topic 1:
 citra tulisan tangan pengenalan batik fitur ekstraksi tekstur ciri wajah 
 
 Topic 2: 
-game mobile pembelajaran android teknologi gerakan virtual reality sapi algoritma 
+game mobile pembelajaran android teknologi gerakan sapi virtual reality algoritma 
 
 Topic 3: 
-arsitektur citra bangkalan enterprise batik togaf informasi dinas perdagangan instansi 
+arsitektur enterprise bangkalan togaf citra batik informasi dinas pelayanan tahapan 
 
 Topic 4: 
-arsitektur tangan tulisan pengenalan enterprise togaf telapak sistem bangkalan informasi 
+tangan arsitektur tulisan pengenalan telapak enterprise togaf sistem bangkalan informasi 
 
 Topic 5: 
 gizi status pasien balita makanan keputusan pendukung menu bayes naïve 
 
 Topic 6: 
-kriteria reality virtual karyawan augmented keputusan dunia teknologi second life 
+kriteria reality karyawan virtual keputusan pendukung augmented teknologi tangan dunia 
 
 Topic 7: 
-reality virtual dokumen augmented penjadwalan dunia second life hujan kuliah 
+reality virtual dokumen augmented dunia second life hujan penjadwalan teknologi 
 
 Topic 8: 
-batik commerce website tulis model decision toko madura penjadwalan pamekasan 
+batik website commerce tulis decision model toko madura penjadwalan kuliah 
 
 Topic 9: 
-gizi batik reality status virtual peramalan commerce website tulis balita 
+batik gizi reality status commerce virtual peramalan website tulis penjualan 
 </pre></div>
 </div>
 </div>
@@ -1281,7 +4354,7 @@ gizi batik reality status virtual peramalan commerce website tulis balita
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">UAS Web Mining-Topic Modelling(LSA)</p>
         </div>
     </a>
 </div>

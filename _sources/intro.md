@@ -1,11 +1,13 @@
-# Welcome to your Jupyter Book
+# UAS Web Mining-Topic Modelling(LSA)
 
-This is a small sample book to give you a feel for how book content is
-structured.
-It shows off a few of the major file types, as well as some sample content.
-It does not go in-depth into any particular topic - check out [the Jupyter Book documentation](https://jupyterbook.org) for more information.
+Disusun untuk memenuhi tugas mata kuliah penambangan dan pencarian web yang diampu oleh Bapak Mulaab
 
-Check out the content pages bundled with this sample book to see more.
+Disusun oleh:
+
+Nama: Firyal Indah Permatasari
+
+Nim:190411100011
 
 ```{tableofcontents}
+
 ```
